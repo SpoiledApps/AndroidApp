@@ -9,4 +9,18 @@
     <string name="invalid_username">Not a valid username</string>
     <string name="invalid_password">Password must be >5 characters</string>
     <string name="login_failed">"Login failed"</string>
+    <string name="i_agree">I Agree!</string>
+    <string name="registration_page">Registration Page</string>
+    <string name="email_address">Email Address</string>
+    <string name="password">Password</string>
+    <string name="do_you_agree_to_be_proper_and_respectful_on_this_app_do_you_also_agree_that_all_of_the_information_entered_is_correct_check_the_box_below_if_you_agree">Do you agree to be proper and respectful on this app? Do you also agree that all of the information entered is correct? Check the box below if you agree.</string>
+    <string name="first_name">First Name</string>
+    <string name="please_create_a_username_and_password_for_your_account">Please create a username and password for your account!</string>
+    <string name="last_name">Last Name</string>
+    <string name="username">Username</string>
+    <string name="let_s_spoil_some_apps">Let\'s spoil some apps!</string>
+    <string name="title_activity_home_page">HomePageActivity</string>
+    <string name="title_home">Home</string>
+    <string name="title_dashboard">Dashboard</string>
+    <string name="title_notifications">Notifications</string>
 </resources>
