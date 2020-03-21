@@ -23,4 +23,10 @@
     <string name="title_home">Home</string>
     <string name="title_dashboard">Dashboard</string>
     <string name="title_notifications">Notifications</string>
+
+    <string name="title_search">Search for an App!</string>
+    <string name="title_add_listing">Add a new app to the catalog</string>
+    <string name="title_all_listings">All Listings</string>
+
+    <string name="no_search_results">Dont See Your App Here? Add an app to our listings!</string>
 </resources>
