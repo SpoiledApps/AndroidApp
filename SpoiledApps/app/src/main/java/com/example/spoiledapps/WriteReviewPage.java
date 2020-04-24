@@ -58,7 +58,7 @@ public class WriteReviewPage extends AppCompatActivity {
 
         submitReviewButton = findViewById(R.id.SubmitReviewButton);
 
-
+        getSupportActionBar().hide();
 
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);

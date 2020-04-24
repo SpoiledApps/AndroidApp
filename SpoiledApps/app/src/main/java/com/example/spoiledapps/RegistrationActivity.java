@@ -77,6 +77,8 @@ public class RegistrationActivity extends AppCompatActivity {
             finish();
         }
 
+        getSupportActionBar().hide();
+
         background.setOnTouchListener(new View.OnTouchListener() {
             @Override
             public boolean onTouch(View v, MotionEvent event) {

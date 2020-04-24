@@ -55,7 +55,7 @@ public class LoginActivity extends AppCompatActivity {
             }
         });
 
-
+        getSupportActionBar().hide();
         loginViewModel = ViewModelProviders.of(this, new LoginViewModelFactory())
                 .get(LoginViewModel.class);
 
