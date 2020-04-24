@@ -1,21 +1,22 @@
 package com.example.spoiledapps;
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
-
+import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
-import android.util.Log;
+import android.view.MotionEvent;
 import android.view.View;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ProgressBar;
 import android.widget.Toast;
 
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.constraintlayout.widget.ConstraintLayout;
+
 import com.google.android.gms.tasks.OnCompleteListener;
-import com.google.android.gms.tasks.OnFailureListener;
-import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
@@ -39,7 +40,7 @@ public class RegistrationActivity extends AppCompatActivity {
     private static final String KEY_appsReviewed = "Apps Reviewed by User:";
     private static int numReviews;
     private static double reputationScore;
-    private static ArrayList <String> appsReviewed;
+    private static ArrayList<String> appsReviewed;
 
     private EditText editTextFirstName;
     private EditText editTextLastName;
@@ -47,6 +48,7 @@ public class RegistrationActivity extends AppCompatActivity {
     private EditText editTextUsername;
     private EditText editTextPassword;
     private FirebaseFirestore db;
+    private ConstraintLayout background;
 
     //following variables are for Firebase authentication;
     private ProgressBar progressBar;
@@ -60,6 +62,7 @@ public class RegistrationActivity extends AppCompatActivity {
 
         db = FirebaseFirestore.getInstance();
 
+        background = findViewById(R.id.registrationBackground);
         editTextFirstName = findViewById(R.id.firstName);
         editTextLastName = findViewById(R.id.lastName);
         editTextEmail = findViewById(R.id.emailAddress);
@@ -69,10 +72,19 @@ public class RegistrationActivity extends AppCompatActivity {
         auth = FirebaseAuth.getInstance();
         mRegisterBtn = findViewById(R.id.registrationButton);
 
-        if(auth.getCurrentUser()!=null){
-            startActivity(new Intent(getApplicationContext(),HomePageActivity.class));
+        if (auth.getCurrentUser() != null) {
+            startActivity(new Intent(getApplicationContext(), HomePageActivity.class));
             finish();
         }
+
+        background.setOnTouchListener(new View.OnTouchListener() {
+            @Override
+            public boolean onTouch(View v, MotionEvent event) {
+                InputMethodManager imm = (InputMethodManager) getSystemService(INPUT_METHOD_SERVICE);
+                imm.hideSoftInputFromWindow(getCurrentFocus().getWindowToken(), 0);
+                return true;
+            }
+        });
 
         mRegisterBtn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -83,45 +95,44 @@ public class RegistrationActivity extends AppCompatActivity {
                 String username = editTextUsername.getText().toString().trim();
                 String password = editTextPassword.getText().toString().trim();
 
-                if(TextUtils.isEmpty(firstName)){
+                if (TextUtils.isEmpty(firstName)) {
                     editTextFirstName.setError("First name is required!");
                     return;
                 }
-                if(TextUtils.isEmpty(lastName)){
+                if (TextUtils.isEmpty(lastName)) {
                     editTextLastName.setError("Last name is required!");
                     return;
                 }
-                if(TextUtils.isEmpty(email)){
+                if (TextUtils.isEmpty(email)) {
                     editTextEmail.setError("Email address is required!");
                     return;
                 }
-                if(TextUtils.isEmpty(username)){
+                if (TextUtils.isEmpty(username)) {
                     editTextUsername.setError("Username is required!");
                     return;
                 }
-                if(TextUtils.isEmpty(password)){
+                if (TextUtils.isEmpty(password)) {
                     editTextPassword.setError("Password is required!");
                     return;
                 }
-                if(password.length()<8){
+                if (password.length() < 8) {
                     editTextPassword.setError("Your password must be 8 characters or more!");
                     return;
                 }
 
                 //Register the user and take them to the Home Page!
-                auth.createUserWithEmailAndPassword(email,password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+                auth.createUserWithEmailAndPassword(email, password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         progressBar.setVisibility(View.VISIBLE);
 
-                        if(task.isSuccessful()){
+                        if (task.isSuccessful()) {
                             Toast.makeText(RegistrationActivity.this, "User Registered!", Toast.LENGTH_SHORT).show();
                             submitRegistration();
-                            startActivity(new Intent (getApplicationContext(), HomePageActivity.class));
-                        }
-                        else {
+                            startActivity(new Intent(getApplicationContext(), HomePageActivity.class));
+                        } else {
                             progressBar.setVisibility(View.INVISIBLE);
-                            Toast.makeText(RegistrationActivity.this, "There was an error! " +task.getException().getMessage(), Toast.LENGTH_SHORT).show();
+                            Toast.makeText(RegistrationActivity.this, "There was an error! " + task.getException().getMessage(), Toast.LENGTH_SHORT).show();
                         }
                     }//end onComplete()
                 });
@@ -129,29 +140,39 @@ public class RegistrationActivity extends AppCompatActivity {
         });
 
     }
-//Method collects data and copies it to database!
-public void submitRegistration()
-{
-    numReviews = 0;
-    reputationScore=0;
-    appsReviewed = new ArrayList<String>();
 
-    String firstName = editTextFirstName.getText().toString();
-    String lastName = editTextLastName.getText().toString();
-    String email = editTextEmail.getText().toString();
-    String username = editTextUsername.getText().toString();
-    String password = editTextPassword.getText().toString();
+    //Method collects data and copies it to database!
+    public void submitRegistration() {
+        numReviews = 0;
+        reputationScore = 0;
+        appsReviewed = new ArrayList<String>();
 
-    Map<String, Object> userRegistration = new HashMap<>();
-    userRegistration.put(KEY_firstName, firstName);
-    userRegistration.put(KEY_lastName, lastName);
-    userRegistration.put(KEY_email, email);
-    userRegistration.put(KEY_username, username);
-    userRegistration.put(KEY_password, password);
-    userRegistration.put(KEY_numReviews, numReviews);
-    userRegistration.put(KEY_reputation,reputationScore);
-    userRegistration.put(KEY_appsReviewed,appsReviewed);
+        String firstName = editTextFirstName.getText().toString();
+        String lastName = editTextLastName.getText().toString();
+        String email = editTextEmail.getText().toString();
+        String username = editTextUsername.getText().toString();
+        String password = editTextPassword.getText().toString();
 
-    db.collection("Users").document().set(userRegistration);
-}// end submitRegistration() method!
+        Map<String, Object> userRegistration = new HashMap<>();
+        userRegistration.put(KEY_firstName, firstName);
+        userRegistration.put(KEY_lastName, lastName);
+        userRegistration.put(KEY_email, email);
+        userRegistration.put(KEY_username, username);
+        userRegistration.put(KEY_password, password);
+        userRegistration.put(KEY_numReviews, numReviews);
+        userRegistration.put(KEY_reputation, reputationScore);
+        userRegistration.put(KEY_appsReviewed, appsReviewed);
+
+        db.collection("Users").document().set(userRegistration);
+    }// end submitRegistration() method!
+
+
+    public static void hideSoftKeyboard(Activity activity) {
+        InputMethodManager inputMethodManager =
+                (InputMethodManager) activity.getSystemService(
+                        Activity.INPUT_METHOD_SERVICE);
+        inputMethodManager.hideSoftInputFromWindow(
+                activity.getCurrentFocus().getWindowToken(), 0);
+    }
+
 }
