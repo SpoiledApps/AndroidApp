@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "952487434608",
+    "firebase_url": "https://spoiledapps-6fe11.firebaseio.com",
+    "project_id": "spoiledapps-6fe11",
+    "storage_bucket": "spoiledapps-6fe11.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:952487434608:android:4bdacb33bb7a46127657b5",
+        "android_client_info": {
+          "package_name": "com.example.spoiledapps"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "952487434608-0jcuvheur9bgbl8csql9hrfu1lifpnaf.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAQD9lq_zehcyNvkTOzTqopReQJDTlt2ew"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "952487434608-0jcuvheur9bgbl8csql9hrfu1lifpnaf.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
