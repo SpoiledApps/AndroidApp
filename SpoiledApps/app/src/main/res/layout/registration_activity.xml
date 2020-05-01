@@ -14,33 +14,16 @@
         android:layout_height="54dp"
         android:layout_marginStart="125dp"
         android:layout_marginLeft="130dp"
-        android:layout_marginTop="119dp"
         android:layout_marginEnd="124dp"
         android:layout_marginRight="130dp"
-        android:layout_marginBottom="132dp"
+        android:layout_marginBottom="204dp"
         android:background="#FFEB3B"
         android:onClick="submitRegistration"
         android:text="@string/let_s_spoil_some_apps"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.79"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/userAgree"
-        app:layout_constraintVertical_bias="0.82" />
-
-    <CheckBox
-        android:id="@+id/userAgree"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="161dp"
-        android:layout_marginLeft="161dp"
-        android:layout_marginTop="15dp"
-        android:layout_marginEnd="191dp"
-        android:layout_marginRight="191dp"
-        android:text="@string/i_agree"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/messageToUser2" />
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <EditText
         android:id="@+id/firstName"
@@ -134,39 +117,26 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="174dp"
         android:layout_marginLeft="174dp"
-        android:layout_marginTop="19dp"
+        android:layout_marginTop="12dp"
         android:layout_marginEnd="189dp"
         android:layout_marginRight="189dp"
-        android:layout_marginBottom="40dp"
+        android:layout_marginBottom="14dp"
         android:visibility="invisible"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/backtoLogin"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/registrationButton" />
-
-    <TextView
-        android:id="@+id/messageToUser2"
-        android:layout_width="match_parent"
-        android:layout_height="55dp"
-        android:layout_marginStart="5dp"
-        android:layout_marginLeft="10dp"
-        android:layout_marginTop="29dp"
-        android:layout_marginEnd="5dp"
-        android:layout_marginRight="5dp"
-        android:text="@string/do_you_agree_to_be_proper_and_respectful_on_this_app_do_you_also_agree_that_all_of_the_information_entered_is_correct_check_the_box_below_if_you_agree"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/password" />
 
     <TextView
         android:id="@+id/pageTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="68dp"
-        android:layout_marginLeft="68dp"
-        android:layout_marginTop="27dp"
-        android:layout_marginEnd="67dp"
-        android:layout_marginRight="67dp"
+        android:layout_marginStart="56dp"
+        android:layout_marginLeft="56dp"
+        android:layout_marginTop="39dp"
+        android:layout_marginEnd="57dp"
+        android:layout_marginRight="57dp"
         android:layout_marginBottom="19dp"
         android:fontFamily="@font/aclonica"
         android:text="@string/registration_page"
@@ -190,5 +160,20 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/emailAddress" />
+
+    <Button
+        android:id="@+id/backtoLogin"
+        android:layout_width="172dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="115dp"
+        android:layout_marginLeft="115dp"
+        android:layout_marginTop="14dp"
+        android:layout_marginEnd="124dp"
+        android:layout_marginRight="124dp"
+        android:background="#FFEB3B"
+        android:text="@string/back_to_login_page"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/progressBar" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
