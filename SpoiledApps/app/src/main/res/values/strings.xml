@@ -57,4 +57,5 @@
     <string name="back_to_login_page">Back to Login Page</string>
     <string name="go_back_to_login_page">Go back to login page!</string>
     <string name="reset_password_now">Reset password now!</string>
+    <string name="title_activity_app_list">AppListActivity</string>
 </resources>
