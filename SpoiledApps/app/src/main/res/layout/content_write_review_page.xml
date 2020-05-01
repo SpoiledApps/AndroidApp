@@ -1,0 +1,215 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+    <fragment
+        android:id="@+id/nav_host_fragment"
+        android:name="androidx.navigation.fragment.NavHostFragment"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:defaultNavHost="true"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0"
+        app:navGraph="@navigation/nav_graph2" />
+
+    <EditText
+        android:id="@+id/ReviewHeadline"
+        android:layout_width="350dp"
+        android:layout_height="54dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="@string/ReviewHeadline"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.262"
+        app:layout_constraintStart_toStartOf="@+id/nav_host_fragment"
+        app:layout_constraintTop_toTopOf="@+id/nav_host_fragment"
+        app:layout_constraintVertical_bias="0.036" />
+
+    <TextView
+        android:id="@+id/RatingLabel"
+        android:layout_width="381dp"
+        android:layout_height="27dp"
+        android:text="@string/Rating"
+        app:layout_constraintEnd_toEndOf="@+id/nav_host_fragment"
+        app:layout_constraintStart_toStartOf="@+id/nav_host_fragment"
+        app:layout_constraintTop_toBottomOf="@+id/ReviewHeadline" />
+
+    <EditText
+        android:id="@+id/ProsFillable"
+        android:layout_width="181dp"
+        android:layout_height="33dp"
+        android:layout_marginTop="172dp"
+        android:ems="10"
+        android:gravity="start|top"
+        android:inputType="textMultiLine"
+        app:layout_constraintEnd_toEndOf="@+id/nav_host_fragment"
+        app:layout_constraintHorizontal_bias="0.056"
+        app:layout_constraintStart_toStartOf="@+id/nav_host_fragment"
+        app:layout_constraintTop_toTopOf="@+id/nav_host_fragment" />
+
+    <EditText
+        android:id="@+id/RatingAsDecimal"
+        android:layout_width="96dp"
+        android:layout_height="42dp"
+        android:ems="10"
+        android:inputType="numberDecimal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/nav_host_fragment"
+        app:layout_constraintHorizontal_bias="0.041"
+        app:layout_constraintStart_toStartOf="@+id/nav_host_fragment"
+        app:layout_constraintTop_toBottomOf="@+id/RatingLabel"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <TextView
+        android:id="@+id/ProsLabel"
+        android:layout_width="55dp"
+        android:layout_height="19dp"
+        android:layout_marginTop="4dp"
+        android:text="@string/Pros"
+        app:layout_constraintBottom_toTopOf="@+id/ProsFillable"
+        app:layout_constraintEnd_toEndOf="@+id/nav_host_fragment"
+        app:layout_constraintHorizontal_bias="0.033"
+        app:layout_constraintStart_toStartOf="@+id/nav_host_fragment"
+        app:layout_constraintTop_toBottomOf="@+id/RatingAsDecimal"
+        app:layout_constraintVertical_bias="0.636" />
+
+    <TextView
+        android:id="@+id/ConsLabel"
+        android:layout_width="48dp"
+        android:layout_height="23dp"
+        android:text="@string/Cons"
+        app:layout_constraintBottom_toBottomOf="@+id/nav_host_fragment"
+        app:layout_constraintEnd_toEndOf="@+id/nav_host_fragment"
+        app:layout_constraintHorizontal_bias="0.033"
+        app:layout_constraintStart_toStartOf="@+id/nav_host_fragment"
+        app:layout_constraintTop_toBottomOf="@+id/ProsFillable"
+        app:layout_constraintVertical_bias="0.015" />
+
+    <EditText
+        android:id="@+id/ConsFillable"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:gravity="start|top"
+        android:inputType="textMultiLine"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/nav_host_fragment"
+        app:layout_constraintHorizontal_bias="0.06"
+        app:layout_constraintStart_toStartOf="@+id/nav_host_fragment"
+        app:layout_constraintTop_toBottomOf="@+id/ConsLabel"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <TextView
+        android:id="@+id/FavFeatureLabel"
+        android:layout_width="119dp"
+        android:layout_height="22dp"
+        android:text="@string/FavFeature"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/nav_host_fragment"
+        app:layout_constraintHorizontal_bias="0.034"
+        app:layout_constraintStart_toStartOf="@+id/nav_host_fragment"
+        app:layout_constraintTop_toBottomOf="@+id/ConsFillable"
+        app:layout_constraintVertical_bias="0.025" />
+
+    <EditText
+        android:id="@+id/FavFeatureFillable"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:gravity="start|top"
+        android:inputType="textMultiLine"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/nav_host_fragment"
+        app:layout_constraintHorizontal_bias="0.05"
+        app:layout_constraintStart_toStartOf="@+id/nav_host_fragment"
+        app:layout_constraintTop_toBottomOf="@+id/FavFeatureLabel"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <TextView
+        android:id="@+id/LeastFavFeatureLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/LeastFavFeature"
+        app:layout_constraintBottom_toBottomOf="@+id/nav_host_fragment"
+        app:layout_constraintEnd_toEndOf="@+id/nav_host_fragment"
+        app:layout_constraintHorizontal_bias="0.045"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/FavFeatureFillable"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <EditText
+        android:id="@+id/leastFavFeatureFillable"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:gravity="start|top"
+        android:inputType="textMultiLine"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/nav_host_fragment"
+        app:layout_constraintHorizontal_bias="0.06"
+        app:layout_constraintStart_toStartOf="@+id/nav_host_fragment"
+        app:layout_constraintTop_toBottomOf="@+id/LeastFavFeatureLabel"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <TextView
+        android:id="@+id/FreeFormLabel"
+        android:layout_width="217dp"
+        android:layout_height="24dp"
+        android:text="@string/FreeformEntry"
+        app:layout_constraintBottom_toBottomOf="@+id/nav_host_fragment"
+        app:layout_constraintEnd_toEndOf="@+id/nav_host_fragment"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/nav_host_fragment"
+        app:layout_constraintTop_toBottomOf="@+id/leastFavFeatureFillable"
+        app:layout_constraintVertical_bias="0.301" />
+
+    <TextView
+        android:id="@+id/HintLabel"
+        android:layout_width="302dp"
+        android:layout_height="37dp"
+        android:text="@string/ReviewInstructions"
+        app:layout_constraintBottom_toBottomOf="@+id/nav_host_fragment"
+        app:layout_constraintEnd_toEndOf="@+id/nav_host_fragment"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/nav_host_fragment"
+        app:layout_constraintTop_toBottomOf="@+id/FreeFormLabel"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <EditText
+        android:id="@+id/FreeformReviewFillable"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:gravity="start|top"
+        android:inputType="textMultiLine"
+        app:layout_constraintBottom_toBottomOf="@+id/nav_host_fragment"
+        app:layout_constraintEnd_toEndOf="@+id/nav_host_fragment"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/nav_host_fragment"
+        app:layout_constraintTop_toBottomOf="@+id/HintLabel"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <Button
+        android:id="@+id/SubmitReviewButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/ReviewSubmitButton"
+        app:layout_constraintBottom_toBottomOf="@+id/nav_host_fragment"
+        app:layout_constraintEnd_toEndOf="@+id/nav_host_fragment"
+        app:layout_constraintHorizontal_bias="0.946"
+        app:layout_constraintStart_toStartOf="@+id/nav_host_fragment"
+        app:layout_constraintTop_toBottomOf="@+id/FreeformReviewFillable"
+        app:layout_constraintVertical_bias="0.521" />;
+        tools:layout_editor_absoluteX="269dp"
+        tools:layout_editor_absoluteY="645dp" />
+</androidx.constraintlayout.widget.ConstraintLayout>
