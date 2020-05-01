@@ -22,13 +22,11 @@
         <activity
             android:name=".WriteReviewPage"
             android:label="@string/title_activity_write_review_page"
-            android:theme="@style/AppTheme.NoActionBar">
-        </activity>
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".AddAppPage"
             android:label="@string/title_activity_add_app_page"
-            android:theme="@style/AppTheme.NoActionBar">
-        </activity>
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name=".RegistrationActivity" />
         <activity
             android:name=".HomePageActivity"
