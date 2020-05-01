@@ -51,4 +51,10 @@
     <string name="hello_first_fragment">Hello first fragment</string>
     <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
     <string name="title_activity_write_review_page">WriteReviewPage</string>
+    <string name="resend_email">Resend Email!</string>
+    <string name="didn_t_get_a_verification_email_click_the_button_below_to_resend_an_email_to_your_account">Didn\'t get a verification email? Click the button below to resend an email to your account!</string>
+    <string name="you_still_have_not_verified_your_account_please_go_to_your_inbox_to_verify_now_to_use_spoiledapps">You still have not verified your account! Please go to your inbox to verify now to use SpoiledApps!</string>
+    <string name="back_to_login_page">Back to Login Page</string>
+    <string name="go_back_to_login_page">Go back to login page!</string>
+    <string name="reset_password_now">Reset password now!</string>
 </resources>

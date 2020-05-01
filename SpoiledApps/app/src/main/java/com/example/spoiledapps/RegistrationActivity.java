@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
+import android.util.Log;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.inputmethod.InputMethodManager;
@@ -17,14 +18,19 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.constraintlayout.widget.ConstraintLayout;
 
 import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.firestore.FirebaseFirestore;
 
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
+
+import io.opencensus.tags.Tag;
 
 public class RegistrationActivity extends AppCompatActivity {
 
@@ -53,7 +59,7 @@ public class RegistrationActivity extends AppCompatActivity {
     //following variables are for Firebase authentication;
     private ProgressBar progressBar;
     private FirebaseAuth auth;
-    private Button mRegisterBtn;
+    private Button mRegisterBtn, mgoBacktoLoginScreen;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -71,6 +77,7 @@ public class RegistrationActivity extends AppCompatActivity {
         progressBar = findViewById(R.id.progressBar);
         auth = FirebaseAuth.getInstance();
         mRegisterBtn = findViewById(R.id.registrationButton);
+        mgoBacktoLoginScreen = findViewById(R.id.backtoLogin);
 
         if (auth.getCurrentUser() != null) {
             startActivity(new Intent(getApplicationContext(), HomePageActivity.class));
@@ -79,12 +86,21 @@ public class RegistrationActivity extends AppCompatActivity {
 
         getSupportActionBar().hide();
 
-        background.setOnTouchListener(new View.OnTouchListener() {
+        /*background.setOnTouchListener(new View.OnTouchListener() {
             @Override
             public boolean onTouch(View v, MotionEvent event) {
                 InputMethodManager imm = (InputMethodManager) getSystemService(INPUT_METHOD_SERVICE);
                 imm.hideSoftInputFromWindow(getCurrentFocus().getWindowToken(), 0);
                 return true;
+            }
+        });
+        /*
+         */
+
+        mgoBacktoLoginScreen.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(getApplicationContext(), LoginActivity.class));
             }
         });
 
@@ -129,9 +145,25 @@ public class RegistrationActivity extends AppCompatActivity {
                         progressBar.setVisibility(View.VISIBLE);
 
                         if (task.isSuccessful()) {
-                            Toast.makeText(RegistrationActivity.this, "User Registered!", Toast.LENGTH_SHORT).show();
+
+                            //Verification Link Code Below!
+                            FirebaseUser someUser = auth.getCurrentUser();
+                            someUser.sendEmailVerification().addOnSuccessListener(new OnSuccessListener<Void>() {
+                                @Override
+                                public void onSuccess(Void aVoid) {
+                                    Toast.makeText(RegistrationActivity.this, "Thanks for registering! Email Verification has been sent! Check your inbox.", Toast.LENGTH_SHORT).show();
+                                }
+                            }).addOnFailureListener(new OnFailureListener() {
+                                private String TAG = "";
+
+                                @Override
+                                public void onFailure(@NonNull Exception e) {
+                                    Log.d(TAG, "Email verification NOT sent! "+ e.getMessage());
+                                }
+                            });
+
                             submitRegistration();
-                            startActivity(new Intent(getApplicationContext(), HomePageActivity.class));
+                            startActivity(new Intent(getApplicationContext(), verificationPage.class));
                         } else {
                             progressBar.setVisibility(View.INVISIBLE);
                             Toast.makeText(RegistrationActivity.this, "There was an error! " + task.getException().getMessage(), Toast.LENGTH_SHORT).show();
@@ -176,5 +208,6 @@ public class RegistrationActivity extends AppCompatActivity {
         inputMethodManager.hideSoftInputFromWindow(
                 activity.getCurrentFocus().getWindowToken(), 0);
     }
+
 
 }
