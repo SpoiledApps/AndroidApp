@@ -79,14 +79,10 @@ public class RegistrationActivity extends AppCompatActivity {
         mRegisterBtn = findViewById(R.id.registrationButton);
         mgoBacktoLoginScreen = findViewById(R.id.backtoLogin);
 
-        if (auth.getCurrentUser() != null) {
-            startActivity(new Intent(getApplicationContext(), HomePageActivity.class));
-            finish();
-        }
 
         getSupportActionBar().hide();
 
-        /*background.setOnTouchListener(new View.OnTouchListener() {
+        background.setOnTouchListener(new View.OnTouchListener() {
             @Override
             public boolean onTouch(View v, MotionEvent event) {
                 InputMethodManager imm = (InputMethodManager) getSystemService(INPUT_METHOD_SERVICE);
@@ -94,8 +90,8 @@ public class RegistrationActivity extends AppCompatActivity {
                 return true;
             }
         });
-        /*
-         */
+
+
 
         mgoBacktoLoginScreen.setOnClickListener(new View.OnClickListener() {
             @Override

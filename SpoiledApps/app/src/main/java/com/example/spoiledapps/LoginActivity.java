@@ -1,11 +1,13 @@
 package com.example.spoiledapps;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.os.Build;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.util.Log;
@@ -23,6 +25,8 @@ import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 
+import java.util.Objects;
+
 public class LoginActivity extends AppCompatActivity {
 
     private Button mLogin, mRegister, mResetPassword;
@@ -30,6 +34,7 @@ public class LoginActivity extends AppCompatActivity {
     private ProgressBar progressBar;
     private FirebaseAuth auth;
 
+    @RequiresApi(api = Build.VERSION_CODES.KITKAT)
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -43,6 +48,12 @@ public class LoginActivity extends AppCompatActivity {
         progressBar = findViewById(R.id.progressBar2);
         auth = FirebaseAuth.getInstance();
 
+        //Allows for a logged in user to remain logged in!
+        if (auth.getCurrentUser() != null) {
+            startActivity(new Intent(getApplicationContext(), HomePageActivity.class));
+            finish();
+        }
+
         mRegister.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -53,27 +64,35 @@ public class LoginActivity extends AppCompatActivity {
         mResetPassword.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                final EditText userEmail = new EditText(v.getContext());
-                AlertDialog.Builder passwordResetMessage = new AlertDialog.Builder(v.getContext());
-                passwordResetMessage.setTitle("Resetting your Password! It's okay, everyone forgets at some point!");
+
+                final EditText someUserEmail = new EditText(v.getContext());
+                final AlertDialog.Builder passwordResetMessage = new AlertDialog.Builder(v.getContext());
+                passwordResetMessage.setTitle("Reset your Password!");
                 passwordResetMessage.setMessage("Please enter the email used for your account to reset account.");
-                passwordResetMessage.setView(userEmail);
+                passwordResetMessage.setView(someUserEmail);
 
 
                 //When user chooses "Yes" to reset password
                 passwordResetMessage.setPositiveButton("Yes please!", new DialogInterface.OnClickListener() {
+
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
-                        String emailAddress = userEmail.getText().toString().trim();
+
+                        String emailAddress = someUserEmail.getText().toString();
+                        if (TextUtils.isEmpty(emailAddress)) {
+                            someUserEmail.setError("First name is required!");
+                            return;
+                        }
+
                         auth.sendPasswordResetEmail(emailAddress).addOnSuccessListener(new OnSuccessListener<Void>() {
                             @Override
                             public void onSuccess(Void aVoid) {
-                                Toast.makeText(LoginActivity.this, "The Reset Email Link has been sent! Check your inbox. ", Toast.LENGTH_SHORT).show();
+                                Toast.makeText(LoginActivity.this, "The Reset Email Link has been sent! Check your inbox. ", Toast.LENGTH_LONG).show();
                             }
                         }).addOnFailureListener(new OnFailureListener() {
                             @Override
                             public void onFailure(@NonNull Exception e) {
-                                Toast.makeText(LoginActivity.this, "The Reset Email Link could not send! " + e.getMessage(), Toast.LENGTH_SHORT).show();
+                                Toast.makeText(LoginActivity.this, "The Reset Email Link could not send! " + e.getMessage(), Toast.LENGTH_LONG).show();
                             }
                         });
                     }
@@ -85,8 +104,8 @@ public class LoginActivity extends AppCompatActivity {
                             //We do nothing!!
                     }
                 });
-
                 passwordResetMessage.create().show();
+
             }//end onClick
         });//end Reset Password Button implementation.
 
@@ -150,7 +169,7 @@ public class LoginActivity extends AppCompatActivity {
             }//end onClick
         });//end Login Button implementation
 
-        getSupportActionBar().hide();
+        Objects.requireNonNull(getSupportActionBar()).hide();
     }
 }//end class
 

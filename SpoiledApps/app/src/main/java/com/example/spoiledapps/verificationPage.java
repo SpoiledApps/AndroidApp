@@ -42,17 +42,17 @@ public class verificationPage extends AppCompatActivity {
                 someUser.sendEmailVerification().addOnSuccessListener(new OnSuccessListener<Void>() {
                     @Override
                     public void onSuccess(Void aVoid) {
-                        Toast.makeText(verificationPage.this, "Email Verification has been sent again! Check your inbox.", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(verificationPage.this, "Another Email Verification has been sent again! Check your inbox.", Toast.LENGTH_LONG).show();
                     }
                 }).addOnFailureListener(new OnFailureListener() {
-                    private String TAG = "";
 
                     @Override
                     public void onFailure(@NonNull Exception e) {
-                        Log.d(TAG, "Email verification NOT sent! "+ e.getMessage());
+                        Toast.makeText(verificationPage.this, "Could not send another email verification email! " + e.getMessage(), Toast.LENGTH_LONG).show();
                     }
                 });
             }
         });//end resendEmailLink Button implementation.
+
     }//end onCreate
 }//end Class
