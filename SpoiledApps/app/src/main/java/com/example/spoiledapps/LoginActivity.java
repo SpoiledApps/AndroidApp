@@ -34,7 +34,6 @@ public class LoginActivity extends AppCompatActivity {
     private ProgressBar progressBar;
     private FirebaseAuth auth;
 
-    @RequiresApi(api = Build.VERSION_CODES.KITKAT)
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -145,7 +144,7 @@ public class LoginActivity extends AppCompatActivity {
                                     someUser.sendEmailVerification().addOnSuccessListener(new OnSuccessListener<Void>() {
                                         @Override
                                         public void onSuccess(Void aVoid) {
-                                            Toast.makeText(LoginActivity.this, "You are currently NOT VERIFIED which you need to do in order to log in! Another email link has been sent to your email. Please check your inbox. ", Toast.LENGTH_SHORT).show();
+                                            Toast.makeText(LoginActivity.this, "You are currently NOT VERIFIED which you need to do in order to log in! Another email link has been sent to your email. Please check your inbox. ", Toast.LENGTH_LONG).show();
                                             progressBar.setVisibility(View.INVISIBLE);
                                         }
                                     }).addOnFailureListener(new OnFailureListener() {
@@ -159,7 +158,7 @@ public class LoginActivity extends AppCompatActivity {
                                     });
                                 }//end mini else statement
                             } else {
-                                Toast.makeText(LoginActivity.this, "There was a problem logging in! " + task.getException().getMessage(), Toast.LENGTH_SHORT).show();
+                                Toast.makeText(LoginActivity.this, "There was a problem logging in! " + task.getException().getMessage(), Toast.LENGTH_LONG).show();
                                 progressBar.setVisibility(View.INVISIBLE);
                             }
                         }
@@ -169,7 +168,7 @@ public class LoginActivity extends AppCompatActivity {
             }//end onClick
         });//end Login Button implementation
 
-        Objects.requireNonNull(getSupportActionBar()).hide();
+        getSupportActionBar().hide();
     }
 }//end class
 

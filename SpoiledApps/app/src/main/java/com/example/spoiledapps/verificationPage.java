@@ -28,12 +28,14 @@ public class verificationPage extends AppCompatActivity {
         auth = FirebaseAuth.getInstance();
 
 
-        goBackToLogIn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startActivity(new Intent(getApplicationContext(), LoginActivity.class));
-            }
-        });//end Go Back To Login Page Button implementation.
+       goBackToLogIn.setOnClickListener(new View.OnClickListener() {
+           @Override
+           public void onClick(View v) {
+               auth.signOut();
+               finish();
+               startActivity(new Intent(getApplicationContext(),LoginActivity.class));
+           }
+       });
 
         resendEmailLink.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -51,6 +53,7 @@ public class verificationPage extends AppCompatActivity {
                         Toast.makeText(verificationPage.this, "Could not send another email verification email! " + e.getMessage(), Toast.LENGTH_LONG).show();
                     }
                 });
+
             }
         });//end resendEmailLink Button implementation.
 

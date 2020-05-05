@@ -40,7 +40,6 @@ public class RegistrationActivity extends AppCompatActivity {
     private static final String KEY_lastName = "Last Name";
     private static final String KEY_email = "Email Address";
     private static final String KEY_password = "password";
-    private static final String KEY_authenticated = "Authenticated?";
     private static final String KEY_numReviews = "Number of Reviews";
     private static final String KEY_reputation = "Reputation_Score";
     private static final String KEY_appsReviewed = "Apps Reviewed by User:";
@@ -147,7 +146,7 @@ public class RegistrationActivity extends AppCompatActivity {
                             someUser.sendEmailVerification().addOnSuccessListener(new OnSuccessListener<Void>() {
                                 @Override
                                 public void onSuccess(Void aVoid) {
-                                    Toast.makeText(RegistrationActivity.this, "Thanks for registering! Email Verification has been sent! Check your inbox.", Toast.LENGTH_SHORT).show();
+                                    Toast.makeText(RegistrationActivity.this, "Thanks for registering! Email Verification has been sent! Check your inbox.", Toast.LENGTH_LONG).show();
                                 }
                             }).addOnFailureListener(new OnFailureListener() {
                                 private String TAG = "";
@@ -162,7 +161,7 @@ public class RegistrationActivity extends AppCompatActivity {
                             startActivity(new Intent(getApplicationContext(), verificationPage.class));
                         } else {
                             progressBar.setVisibility(View.INVISIBLE);
-                            Toast.makeText(RegistrationActivity.this, "There was an error! " + task.getException().getMessage(), Toast.LENGTH_SHORT).show();
+                            Toast.makeText(RegistrationActivity.this, "There was an error! " + task.getException().getMessage(), Toast.LENGTH_LONG).show();
                         }
                     }//end onComplete()
                 });
