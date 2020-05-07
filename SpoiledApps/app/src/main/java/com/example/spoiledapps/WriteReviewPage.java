@@ -112,6 +112,8 @@ public class WriteReviewPage extends AppCompatActivity {
                 reviewSubmission.put(KEY_authorID, userID);
 
                 db.collection("Reviews").document().set(reviewSubmission);
+                Toast.makeText(WriteReviewPage.this, "Review submitted! ", Toast.LENGTH_LONG).show();
+                startActivity(new Intent(getApplicationContext(),HomePageActivity.class));
                /* db.collection("Users").document(userID).get()
                         .addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
                             @Override

@@ -192,7 +192,7 @@ public class RegistrationActivity extends AppCompatActivity {
         userRegistration.put(KEY_reputation, reputationScore);
         userRegistration.put(KEY_appsReviewed, appsReviewed);
 
-        db.collection("Users").document().set(userRegistration);
+        db.collection("Users").document(username).set(userRegistration);
     }// end submitRegistration() method!
 
 

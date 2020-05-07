@@ -138,6 +138,7 @@ public class LoginActivity extends AppCompatActivity {
                                 FirebaseUser someUser = auth.getCurrentUser();
                                 if(someUser.isEmailVerified()) {
                                     Toast.makeText(LoginActivity.this, "You're now logged in!", Toast.LENGTH_SHORT).show();
+                                    progressBar.setVisibility(View.INVISIBLE);
                                     startActivity(new Intent(getApplicationContext(), HomePageActivity.class));
                                 }//end mini if statement
                                 else {

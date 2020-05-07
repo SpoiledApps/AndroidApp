@@ -1,5 +1,6 @@
 package com.example.spoiledapps;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
@@ -12,6 +13,7 @@ import androidx.appcompat.widget.Toolbar;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -46,14 +48,15 @@ public class AddAppPage extends AppCompatActivity
                                             public void onClick(View v) {
                                                 String AppName = editTextAppName.getText().toString().trim();
                                                 String CompanyName = editTextCompanyName.getText().toString().trim();
-                                                ;
+
                                                 Map<String, Object> addNewAppToListing = new HashMap<>();
 
                                                 addNewAppToListing.put(KEY_AppName, AppName);
                                                 addNewAppToListing.put(KEY_CompanyName, CompanyName);
 
-                                                db.collection("Apps").document().set(addNewAppToListing);
-
+                                                db.collection("Apps").document(AppName).set(addNewAppToListing);
+                                                Toast.makeText(AddAppPage.this, "App has been added! ", Toast.LENGTH_LONG).show();
+                                                startActivity(new Intent(getApplicationContext(),HomePageActivity.class));
                                             }
                                         });
 
