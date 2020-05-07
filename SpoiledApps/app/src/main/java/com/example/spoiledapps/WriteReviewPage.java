@@ -2,8 +2,11 @@ package com.example.spoiledapps;
 
 import android.os.Bundle;
 
+import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.snackbar.Snackbar;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -12,6 +15,8 @@ import androidx.appcompat.widget.Toolbar;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -38,6 +43,10 @@ public class WriteReviewPage extends AppCompatActivity {
     private EditText editTextFreeform;
 
     private FirebaseFirestore db;
+    private FirebaseAuth fAuth;
+    private FirebaseFirestore fStore;
+    private String userID;
+    //private TextView textViewData;
 
     private Button submitReviewButton;
 
@@ -55,6 +64,7 @@ public class WriteReviewPage extends AppCompatActivity {
         editTextFavFeature = findViewById(R.id.FavFeatureFillable);
         editTextleastFavFeature = findViewById(R.id.leastFavFeatureFillable);
         editTextFreeform = findViewById(R.id.FreeformReviewFillable);
+
 
         submitReviewButton = findViewById(R.id.SubmitReviewButton);
 
@@ -84,6 +94,9 @@ public class WriteReviewPage extends AppCompatActivity {
                 String freeform = editTextFreeform.getText().toString().trim();
 
                 //Insert Logic to Fetch authorID here
+                fAuth = FirebaseAuth.getInstance();
+                fStore = FirebaseFirestore.getInstance();
+                userID = fAuth.getCurrentUser().getUid();
                 //Insert Logic to Fetch AppID here
 
                 Map<String, Object> reviewSubmission = new HashMap<>();
@@ -96,9 +109,30 @@ public class WriteReviewPage extends AppCompatActivity {
                 reviewSubmission.put(KEY_favFeature, favFeat);
                 reviewSubmission.put(KEY_leastFavFeature, leastFavFeat);
                 reviewSubmission.put(KEY_freeformSection, freeform);
+                reviewSubmission.put(KEY_authorID, userID);
 
                 db.collection("Reviews").document().set(reviewSubmission);
+               /* db.collection("Users").document(userID).get()
+                        .addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
+                            @Override
+                            public void onSuccess(DocumentSnapshot documentSnapshot) {
+                                if(documentSnapshot.exists())
+                                {
+                                    Map<String, Object> user = documentSnapshot.getData();
+                                    int currentNumReviews = user.get(KEY_numReviews);
+                                }
+                                else
+                                {
+                                    Toast.makeText(WriteReviewPage.this, "Document Doesn't Exist", Toast.LENGTH_SHORT).show();
+                                }
+                            }
+                        })
+                db.collection("Users").document(userID).update({)
+                
+                */
             }
+
+
     });
 
     }
