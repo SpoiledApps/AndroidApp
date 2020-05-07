@@ -15,7 +15,7 @@ import androidx.navigation.ui.AppBarConfiguration;
 import androidx.navigation.ui.NavigationUI;
 
 public class HomePageActivity extends AppCompatActivity {
-    private Button mLogoutButton;
+    private Button mLogoutButton, mAddAppPage, mWriteReview;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,6 +40,22 @@ public class HomePageActivity extends AppCompatActivity {
                 finish();
             }
         });//end Logout Button implementation.
+
+        mAddAppPage = findViewById(R.id.addListingButton);
+        mAddAppPage.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(getApplicationContext(),AddAppPage.class));
+            }
+        });
+
+        mWriteReview = findViewById(R.id.writeReviewButton);
+        mWriteReview.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(getApplicationContext(),WriteReviewPage.class));
+            }
+        });
 
         getSupportActionBar().hide();
     }

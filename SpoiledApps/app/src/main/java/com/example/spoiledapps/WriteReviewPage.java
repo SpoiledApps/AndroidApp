@@ -1,5 +1,6 @@
 package com.example.spoiledapps;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import com.google.android.gms.tasks.OnSuccessListener;
@@ -68,7 +69,6 @@ public class WriteReviewPage extends AppCompatActivity {
 
         submitReviewButton = findViewById(R.id.SubmitReviewButton);
 
-        getSupportActionBar().hide();
 
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
