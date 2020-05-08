@@ -43,6 +43,8 @@ public class RegistrationActivity extends AppCompatActivity {
     private static final String KEY_numReviews = "Number of Reviews";
     private static final String KEY_reputation = "Reputation_Score";
     private static final String KEY_appsReviewed = "Apps Reviewed by User:";
+    private static final String KEY_trueUserID = "Firebase Auth User ID";
+
     private static int numReviews;
     private static double reputationScore;
     private static ArrayList<String> appsReviewed;
@@ -59,6 +61,10 @@ public class RegistrationActivity extends AppCompatActivity {
     private ProgressBar progressBar;
     private FirebaseAuth auth;
     private Button mRegisterBtn, mgoBacktoLoginScreen;
+
+    private FirebaseAuth fAuth;
+    private FirebaseFirestore fStore;
+    private String userID;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -191,6 +197,12 @@ public class RegistrationActivity extends AppCompatActivity {
         userRegistration.put(KEY_numReviews, numReviews);
         userRegistration.put(KEY_reputation, reputationScore);
         userRegistration.put(KEY_appsReviewed, appsReviewed);
+
+        fAuth = FirebaseAuth.getInstance();
+        fStore = FirebaseFirestore.getInstance();
+        userID = fAuth.getCurrentUser().getUid();
+
+        userRegistration.put(KEY_trueUserID, userID);
 
         db.collection("Users").document(username).set(userRegistration);
     }// end submitRegistration() method!
