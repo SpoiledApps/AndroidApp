@@ -40,12 +40,12 @@ public class RegistrationActivity extends AppCompatActivity {
     private static final String KEY_lastName = "Last Name";
     private static final String KEY_email = "Email Address";
     private static final String KEY_password = "password";
-    private static final String KEY_numReviews = "Number of Reviews";
+    public static final String KEY_numReviews = "Number of Reviews";
     private static final String KEY_reputation = "Reputation_Score";
     private static final String KEY_appsReviewed = "Apps Reviewed by User:";
     private static final String KEY_trueUserId = "True User ID";
-    private static int numReviews;
-    private static double reputationScore;
+    public static int numReviews=0;
+    private double reputationScore=0;
     private static ArrayList<String> appsReviewed;
 
     private EditText editTextFirstName;
@@ -65,6 +65,12 @@ public class RegistrationActivity extends AppCompatActivity {
     private FirebaseFirestore fStore;
     private String userID;
 
+    public int getNumReviews(){
+        return numReviews;
+    }
+    public double getRepScore(){
+        return reputationScore;
+    }
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -177,8 +183,6 @@ public class RegistrationActivity extends AppCompatActivity {
 
     //Method collects data and copies it to database!
     public void submitRegistration() {
-        numReviews = 0;
-        reputationScore = 0;
         appsReviewed = new ArrayList<String>();
 
         String firstName = editTextFirstName.getText().toString();
@@ -203,7 +207,7 @@ public class RegistrationActivity extends AppCompatActivity {
 
         userRegistration.put(KEY_trueUserId, userID);
 
-        db.collection("Users").document(username).set(userRegistration);
+        db.collection("Users").document(userID).set(userRegistration);
     }// end submitRegistration() method!
 
 

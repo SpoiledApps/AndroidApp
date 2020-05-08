@@ -7,6 +7,7 @@ import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.snackbar.Snackbar;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
 
@@ -113,25 +114,32 @@ public class WriteReviewPage extends AppCompatActivity {
 
                 db.collection("Reviews").document().set(reviewSubmission);
                 Toast.makeText(WriteReviewPage.this, "Review submitted! ", Toast.LENGTH_LONG).show();
+
                 startActivity(new Intent(getApplicationContext(),HomePageActivity.class));
-               /* db.collection("Users").document(userID).get()
+
+
+                //Updates number of reviews user writes
+                DocumentReference numReviewsReference = db.collection("Users").document(userID);
+                numReviewsReference.update(RegistrationActivity.KEY_numReviews,RegistrationActivity.numReviews++);//NEEDS TO BE FIXED ASAP!
+
+
+              /* db.collection("Users").document(userID).get()
                         .addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
                             @Override
                             public void onSuccess(DocumentSnapshot documentSnapshot) {
                                 if(documentSnapshot.exists())
                                 {
                                     Map<String, Object> user = documentSnapshot.getData();
-                                    int currentNumReviews = user.get(KEY_numReviews);
                                 }
                                 else
                                 {
                                     Toast.makeText(WriteReviewPage.this, "Document Doesn't Exist", Toast.LENGTH_SHORT).show();
                                 }
                             }
-                        })
-                db.collection("Users").document(userID).update({)
-                
+                        });
+                db.collection("Users").document(userID).update({RegistrationActivity.KEY_numReviews  RegistrationActivity.numReviews++});
                 */
+
             }
 
 

@@ -137,9 +137,10 @@ public class LoginActivity extends AppCompatActivity {
                             if (task.isSuccessful()) {
                                 FirebaseUser someUser = auth.getCurrentUser();
                                 if(someUser.isEmailVerified()) {
+                                    startActivity(new Intent(getApplicationContext(), HomePageActivity.class));
+
                                     Toast.makeText(LoginActivity.this, "You're now logged in!", Toast.LENGTH_SHORT).show();
                                     progressBar.setVisibility(View.INVISIBLE);
-                                    startActivity(new Intent(getApplicationContext(), HomePageActivity.class));
                                 }//end mini if statement
                                 else {
                                     someUser.sendEmailVerification().addOnSuccessListener(new OnSuccessListener<Void>() {
@@ -149,11 +150,10 @@ public class LoginActivity extends AppCompatActivity {
                                             progressBar.setVisibility(View.INVISIBLE);
                                         }
                                     }).addOnFailureListener(new OnFailureListener() {
-                                        private String TAG = "";
 
                                         @Override
                                         public void onFailure(@NonNull Exception e) {
-                                            Log.d(TAG, "You are currently NOT VERIFIED! However, Email verification could NOT sent! "+ e.getMessage());
+                                            Toast.makeText(LoginActivity.this, "You are currently NOT VERIFIED! However, we could not send another verification email link to you. " + e.getMessage(), Toast.LENGTH_LONG).show();
                                             progressBar.setVisibility(View.INVISIBLE);
                                         }
                                     });
