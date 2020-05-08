@@ -3,17 +3,26 @@ package com.example.spoiledapps;
 import android.content.Intent;
 import android.os.Bundle;
 
+import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.android.gms.tasks.Task;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.snackbar.Snackbar;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.firestore.CollectionReference;
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.firestore.Query;
+import com.google.firebase.firestore.QueryDocumentSnapshot;
+import com.google.firebase.firestore.QuerySnapshot;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -22,6 +31,8 @@ import android.widget.Toast;
 
 import java.util.HashMap;
 import java.util.Map;
+
+
 
 public class WriteReviewPage extends AppCompatActivity {
 
@@ -35,6 +46,9 @@ public class WriteReviewPage extends AppCompatActivity {
     private static final String KEY_favFeature = "Favorite Feature";
     private static final String KEY_leastFavFeature = "Least Favorite Feature";
     private static final String KEY_freeformSection = "Freeform Section";
+
+    private String usersDocID;
+    private int currentNumReviews;
 
     private EditText editTextHeadline;
     private EditText editTextRating;
@@ -119,8 +133,34 @@ public class WriteReviewPage extends AppCompatActivity {
 
 
                 //Updates number of reviews user writes
+                CollectionReference usersRef = db.collection("Users");
+                Task<QuerySnapshot> idQuery = usersRef.whereEqualTo("True User ID", userID).get().addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
+                    @Override
+                    public void onComplete(@NonNull Task<QuerySnapshot> task) {
+                        if(task.isSuccessful())
+                        {
+                            for (QueryDocumentSnapshot document: task.getResult())
+                            {
+                                //Map targetDocument = document.getData();
+                                //usersDocID = targetDocument.toString();
+                                usersDocID = document.getData().toString();
+                            }
+                        }
+                    }
+                });
+
+
+                //db.collection("Users").document(//insert users' document ID)
                 DocumentReference numReviewsReference = db.collection("Users").document(userID);
-                numReviewsReference.update(RegistrationActivity.KEY_numReviews,RegistrationActivity.numReviews++);//NEEDS TO BE FIXED ASAP!
+                numReviewsReference.get()
+                        .addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
+                            @Override
+                            public void onSuccess(DocumentSnapshot documentSnapshot) {
+                             currentNumReviews = (Integer)documentSnapshot.get("Number of Reviews");
+                            }
+                        });
+
+                numReviewsReference.update("Number of Reviews",currentNumReviews++);
 
 
               /* db.collection("Users").document(userID).get()
