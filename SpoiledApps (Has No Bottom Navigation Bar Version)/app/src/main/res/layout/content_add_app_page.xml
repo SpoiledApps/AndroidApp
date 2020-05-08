@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+    <EditText
+        android:id="@+id/enterAppCompanyField"
+        android:layout_width="325dp"
+        android:layout_height="61dp"
+        android:layout_marginStart="43dp"
+        android:layout_marginLeft="43dp"
+        android:layout_marginEnd="43dp"
+        android:layout_marginRight="43dp"
+        android:autofillHints=""
+        android:ems="10"
+        android:hint="@string/enter_app_company_name"
+        android:inputType="textPersonName"
+        app:layout_constraintBottom_toTopOf="@+id/AddNewAppButton"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/PasteSlotForAppLink" />
+
+    <TextView
+        android:id="@+id/AddAppPageTitle"
+        android:layout_width="392dp"
+        android:layout_height="41dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="57dp"
+        android:layout_marginEnd="3dp"
+        android:layout_marginRight="3dp"
+        android:fontFamily="@font/aldrich"
+        android:text="@string/AddAppTitle"
+        android:textColor="#3F51B5"
+        android:textSize="23sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/PasteSlotForAppLink"
+        android:layout_width="340dp"
+        android:layout_height="60dp"
+        android:layout_marginStart="36dp"
+        android:layout_marginLeft="36dp"
+        android:autofillHints=""
+        android:ems="10"
+        android:hint="@string/CopyPasteInstruction"
+        android:inputType="textPersonName"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/AddAppPageTitle"
+        app:layout_constraintVertical_bias="0.024" />
+
+    <Button
+        android:id="@+id/AddNewAppButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="123dp"
+        android:layout_marginLeft="123dp"
+        android:layout_marginEnd="124dp"
+        android:layout_marginRight="124dp"
+        android:text="@string/add_app_to_listing"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/PasteSlotForAppLink"
+        app:layout_constraintVertical_bias="0.653" />
+
+    <EditText
+        android:id="@+id/enterAppNameField"
+        android:layout_width="325dp"
+        android:layout_height="61dp"
+        android:layout_marginStart="43dp"
+        android:layout_marginLeft="43dp"
+        android:layout_marginEnd="43dp"
+        android:layout_marginRight="43dp"
+        android:autofillHints=""
+        android:ems="10"
+        android:hint="@string/enter_app_name"
+        android:inputType="textPersonName"
+        app:layout_constraintBottom_toTopOf="@+id/enterAppCompanyField"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/PasteSlotForAppLink" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
