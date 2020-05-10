@@ -13,6 +13,7 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.firestore.CollectionReference;
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.DocumentSnapshot;
+import com.google.firebase.firestore.FieldValue;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.Query;
 import com.google.firebase.firestore.QueryDocumentSnapshot;
@@ -47,6 +48,7 @@ public class WriteReviewPage extends AppCompatActivity {
     private static final String KEY_authorReputationScore = "Author Reputation Score at Time of Review";
 
     private String usersDocID;
+    private String appID;
 
     private EditText editTextHeadline;
     private EditText editTextRating;
@@ -134,6 +136,8 @@ public class WriteReviewPage extends AppCompatActivity {
                 double useableRepScore = authorRepScore[0];
 
 
+
+
                 String headline = editTextHeadline.getText().toString().trim();
                 String rating = editTextRating.getText().toString().trim();
                 String pros = editTextPros.getText().toString().trim();
@@ -147,7 +151,6 @@ public class WriteReviewPage extends AppCompatActivity {
 
                 Map<String, Object> reviewSubmission = new HashMap<>();
                 //reviewSubmission.put(KEY_appID, insertFetchedAppID);
-                //reviewSubmission.put(KEY_authorID, insertFetchedAuthorID);
                 reviewSubmission.put(KEY_headline, headline);
                 reviewSubmission.put(KEY_rating, rating);
                 reviewSubmission.put(KEY_pros, pros);
@@ -180,6 +183,15 @@ public class WriteReviewPage extends AppCompatActivity {
 
                             }
                         });
+                final DocumentReference appsReviewedRef = db.collection("Users").document(usersDocID);
+                appsReviewedRef.get()
+                        .addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
+                    @Override
+                    public void onSuccess(DocumentSnapshot documentSnapshot) {
+                        appsReviewedRef.update("Apps Reviewed by User", FieldValue.arrayUnion(appID));
+
+                    }
+                });
 
 
 
