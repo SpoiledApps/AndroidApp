@@ -44,7 +44,7 @@ public class WriteReviewPage extends AppCompatActivity {
     private static final String KEY_favFeature = "Favorite Feature";
     private static final String KEY_leastFavFeature = "Least Favorite Feature";
     private static final String KEY_freeformSection = "Freeform Section";
-    private static final String KEY_authorReputationScore = "Author Reputation Score";
+    private static final String KEY_authorReputationScore = "Author Reputation Score at Time of Review";
 
     private String usersDocID;
 
