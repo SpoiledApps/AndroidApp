@@ -1,10 +1,10 @@
-#Sat May 09 02:21:56 EDT 2020
+#Sat May 09 19:27:03 EDT 2020
 path.2=classes2.dex
 path.1=classes.dex
 path.0=classes.dex
 renamed.2=classes3.dex
 renamed.1=classes2.dex
 renamed.0=classes.dex
-base.2=C\:\\Users\\albos\\Documents\\GitHub\\AndroidApp\\SpoiledApps (Has No Bottom Navigation Bar Version)\\app\\build\\intermediates\\dex\\debug\\mergeExtDexDebug\\out\\classes2.dex
-base.1=C\:\\Users\\albos\\Documents\\GitHub\\AndroidApp\\SpoiledApps (Has No Bottom Navigation Bar Version)\\app\\build\\intermediates\\dex\\debug\\mergeProjectDexDebug\\out\\classes.dex
-base.0=C\:\\Users\\albos\\Documents\\GitHub\\AndroidApp\\SpoiledApps (Has No Bottom Navigation Bar Version)\\app\\build\\intermediates\\dex\\debug\\mergeExtDexDebug\\out\\classes.dex
+base.2=C\:\\Users\\shado\\Documents\\School\\NYIT\\Spring 2020\\CSCI 318 - Programming Language Concepts\\AndroidApp-Master\\AndroidApp\\SpoiledApps\\app\\build\\intermediates\\dex\\debug\\mergeExtDexDebug\\out\\classes2.dex
+base.1=C\:\\Users\\shado\\Documents\\School\\NYIT\\Spring 2020\\CSCI 318 - Programming Language Concepts\\AndroidApp-Master\\AndroidApp\\SpoiledApps\\app\\build\\intermediates\\dex\\debug\\mergeProjectDexDebug\\out\\classes.dex
+base.0=C\:\\Users\\shado\\Documents\\School\\NYIT\\Spring 2020\\CSCI 318 - Programming Language Concepts\\AndroidApp-Master\\AndroidApp\\SpoiledApps\\app\\build\\intermediates\\dex\\debug\\mergeExtDexDebug\\out\\classes.dex

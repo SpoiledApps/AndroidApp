@@ -1,5 +1,6 @@
 package com.example.spoiledapps;
 
+import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 
@@ -40,14 +41,15 @@ public class AppListActivity extends AppCompatActivity {
 
         database.collection("Apps")
                 .get()
-                .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
+               .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
                     @Override
                     public void onComplete(@NonNull Task<QuerySnapshot> task) {
                         if (task.isSuccessful()) {
                             for (QueryDocumentSnapshot document : task.getResult()) {
                                 Map<String, Object> apps = document.getData();
                                 String appTitle = null;
-                                String companyName = null;
+                                 String companyName = null;
+                                String documentTag = document.getId();
                                 for (Map.Entry<String,Object> entry : apps.entrySet()) {
                                     if(entry.getKey().toString().equalsIgnoreCase("App_Title")) {
                                         appTitle = entry.getValue().toString();
@@ -56,7 +58,7 @@ public class AppListActivity extends AppCompatActivity {
                                     }
                                 }
                                 System.out.println(appTitle + " " + companyName);
-                                appsList.add(new App(appTitle, companyName));
+                                appsList.add(new App(appTitle, companyName, documentTag));
                                 System.out.println(appsList.get(appsList.size() - 1).getTitle());
                                 System.out.println(appsList.get(appsList.size() - 1).getCompanyName());
                             }
@@ -76,17 +78,19 @@ public class AppListActivity extends AppCompatActivity {
             RelativeLayout appLayout = new RelativeLayout(this.getBaseContext());
             RelativeLayout.LayoutParams linearParams = new RelativeLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, height);
             appLayout.setLayoutParams(linearParams);
-            appLayout.setBackgroundColor(Color.parseColor("#88444444"));
+            appLayout.setBackgroundColor(Color.parseColor("#77555555"));
             scrollView.addView(appLayout);
 
             appLayout.addView(getTextView(app.getTitle(), ViewGroup.LayoutParams.MATCH_PARENT, 150, 10, 10, Color.WHITE, 25));
             appLayout.addView(getTextView("Company: " + app.getCompanyName(), ViewGroup.LayoutParams.MATCH_PARENT, 150, 10, 100, Color.WHITE, 20));
             appLayout.addView(createLine(ViewGroup.LayoutParams.MATCH_PARENT, 5, 0, 345,  Color.RED));
-            appLayout.setId(i);
+            appLayout.setTag(app.getDocumentTag());
             appLayout.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    //TODO: Go to App Detail Activity
+                    Intent appDetailIntent = new Intent(getApplicationContext(),AppDetailActivity.class);
+                    appDetailIntent.putExtra("documentID", v.getTag().toString());
+                    startActivity(appDetailIntent);
                 }
             });
         }

@@ -2,7 +2,9 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/AndroidApp-SpoiledApps.iml" filepath="$PROJECT_DIR$/AndroidApp-SpoiledApps.iml" group="SpoiledApps" />
       <module fileurl="file://$PROJECT_DIR$/.idea/SpoiledApps.iml" filepath="$PROJECT_DIR$/.idea/SpoiledApps.iml" group="SpoiledApps" />
+      <module fileurl="file://$PROJECT_DIR$/app/SpoiledApps-app.iml" filepath="$PROJECT_DIR$/app/SpoiledApps-app.iml" group="SpoiledApps/app" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" group="SpoiledApps/app" />
     </modules>
   </component>
