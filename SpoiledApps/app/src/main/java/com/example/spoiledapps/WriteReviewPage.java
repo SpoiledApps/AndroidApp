@@ -44,6 +44,7 @@ public class WriteReviewPage extends AppCompatActivity {
     private static final String KEY_favFeature = "Favorite Feature";
     private static final String KEY_leastFavFeature = "Least Favorite Feature";
     private static final String KEY_freeformSection = "Freeform Section";
+    private static final String KEY_authorReputationScore = "Author Reputation Score";
 
     private String usersDocID;
 
@@ -102,6 +103,37 @@ public class WriteReviewPage extends AppCompatActivity {
         submitReviewButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
+                //Updates number of reviews user writes
+                CollectionReference usersRef = db.collection("Users");
+                Task<QuerySnapshot> idQuery = usersRef.whereEqualTo("True User ID", userID).get().addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
+                    @Override
+                    public void onComplete(@NonNull Task<QuerySnapshot> task) {
+                        if(task.isSuccessful())
+                        {
+                            for (QueryDocumentSnapshot document: task.getResult())
+                            {
+                                //Map targetDocument = document.getData();
+                                //usersDocID = targetDocument.toString();
+                                usersDocID = document.getData().toString();
+                            }
+                        }
+                    }
+                });
+
+                final double[] authorRepScore = new double[1];
+                DocumentReference authorRepScoreRef = db.collection("Users").document(usersDocID);
+                authorRepScoreRef.get()
+                        .addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
+                            @Override
+                            public void onSuccess(DocumentSnapshot documentSnapshot) {
+                                double reputationScore = (double)documentSnapshot.get("Reputation_Score");
+                                authorRepScore[0] = reputationScore;
+                            }
+                        });
+                double useableRepScore = authorRepScore[0];
+
+
                 String headline = editTextHeadline.getText().toString().trim();
                 String rating = editTextRating.getText().toString().trim();
                 String pros = editTextPros.getText().toString().trim();
@@ -124,6 +156,7 @@ public class WriteReviewPage extends AppCompatActivity {
                 reviewSubmission.put(KEY_leastFavFeature, leastFavFeat);
                 reviewSubmission.put(KEY_freeformSection, freeform);
                 reviewSubmission.put(KEY_authorID, userID);
+                reviewSubmission.put(KEY_authorReputationScore, useableRepScore);
 
                 db.collection("Reviews").document().set(reviewSubmission);
                 Toast.makeText(WriteReviewPage.this, "Review submitted! ", Toast.LENGTH_LONG).show();
@@ -131,22 +164,7 @@ public class WriteReviewPage extends AppCompatActivity {
                 startActivity(new Intent(getApplicationContext(),HomePageActivity.class));
 
 
-                //Updates number of reviews user writes
-                CollectionReference usersRef = db.collection("Users");
-                Task<QuerySnapshot> idQuery = usersRef.whereEqualTo("True User ID", userID).get().addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
-                    @Override
-                    public void onComplete(@NonNull Task<QuerySnapshot> task) {
-                        if(task.isSuccessful())
-                        {
-                            for (QueryDocumentSnapshot document: task.getResult())
-                            {
-                                //Map targetDocument = document.getData();
-                                //usersDocID = targetDocument.toString();
-                                usersDocID = document.getData().toString();
-                            }
-                        }
-                    }
-                });
+
 
 
                 //THIS CODE BELOW UPDATES THE NUMBER OF REVIEWS A USER HAS!
