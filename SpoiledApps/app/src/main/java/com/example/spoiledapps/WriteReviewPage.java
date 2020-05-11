@@ -71,6 +71,8 @@ public class WriteReviewPage extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_write_review_page);
 
+        appID = getIntent().getStringExtra("documentID");
+
         db = FirebaseFirestore.getInstance();
 
         editTextHeadline = findViewById(R.id.ReviewHeadline);

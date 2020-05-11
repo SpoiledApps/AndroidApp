@@ -33,7 +33,7 @@ public class AppListActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_app_list);
 
-        scrollView = findViewById(R.id.applistscroll);
+        scrollView = findViewById(R.id.applistscrolllayout);
         appsList = new ArrayList<App>();
 
         auth = FirebaseAuth.getInstance();
