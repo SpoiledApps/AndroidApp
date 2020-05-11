@@ -124,7 +124,7 @@ public class WriteReviewPage extends AppCompatActivity {
                 });
 
                 final double[] authorRepScore = new double[1];
-                DocumentReference authorRepScoreRef = db.collection("Users").document(usersDocID);
+                DocumentReference authorRepScoreRef = db.collection("Users").document(userID);
                 authorRepScoreRef.get()
                         .addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
                             @Override
@@ -183,7 +183,7 @@ public class WriteReviewPage extends AppCompatActivity {
 
                             }
                         });
-                final DocumentReference appsReviewedRef = db.collection("Users").document(usersDocID);
+                final DocumentReference appsReviewedRef = db.collection("Users").document(userID);
                 appsReviewedRef.get()
                         .addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
                     @Override
