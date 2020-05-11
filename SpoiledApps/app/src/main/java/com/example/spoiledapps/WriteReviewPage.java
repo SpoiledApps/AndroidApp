@@ -125,7 +125,17 @@ public class WriteReviewPage extends AppCompatActivity {
                     }
                 });
 
-
+                final double[] authorRepScore = new double[1];
+                DocumentReference authorRepScoreRef = db.collection("Users").document(userID);
+                authorRepScoreRef.get()
+                        .addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
+                            @Override
+                            public void onSuccess(DocumentSnapshot documentSnapshot) {
+                                double reputationScore = (double)documentSnapshot.get("Reputation_Score");
+                                authorRepScore[0] = reputationScore;
+                            }
+                        });
+                double useableRepScore = authorRepScore[0];
 
 
 
@@ -138,19 +148,7 @@ public class WriteReviewPage extends AppCompatActivity {
                 String leastFavFeat = editTextleastFavFeature.getText().toString().trim();
                 String freeform = editTextFreeform.getText().toString().trim();
 
-                final double[] authorRepScore = new double[1];
-                DocumentReference authorRepScoreRef = db.collection("Users").document(userID);
-                authorRepScoreRef.get()
-                        .addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>()
-                        {
-                            @Override
-                            public void onSuccess(DocumentSnapshot documentSnapshot)
-                            {
-                                double reputationScore = (double)documentSnapshot.get("Reputation_Score");
-                                authorRepScore[0] = reputationScore;
-                            }
-                        });
-                double useableRepScore = authorRepScore[0];
+                //Insert Logic to Fetch AppID here
 
 
                 Map<String, Object> reviewSubmission = new HashMap<>();
