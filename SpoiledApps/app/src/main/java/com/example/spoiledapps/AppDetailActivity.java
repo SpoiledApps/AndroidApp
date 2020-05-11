@@ -1,11 +1,10 @@
 package com.example.spoiledapps;
 
-import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
@@ -25,37 +24,26 @@ import com.google.firebase.firestore.QueryDocumentSnapshot;
 import com.google.firebase.firestore.QuerySnapshot;
 
 import java.util.ArrayList;
+import java.util.Map;
 
 public class AppDetailActivity extends AppCompatActivity {
     private FirebaseAuth auth;
     private LinearLayout scrollView;
     private ArrayList<Review> reviewsList;
-    private TextView appTitleLabel;
-    private TextView companyLabel;
-    private Button writeReviewButton;
-    private String documentID;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_app_detail);
+        setContentView(R.layout.activity_app_list);
 
 
 
-        documentID = getIntent().getStringExtra("documentID");
+        final String documentID = getIntent().getStringExtra("documentID");
         System.out.println("Swapped Intent ID: " + documentID);
 
         reviewsList = new ArrayList<Review>();
-        scrollView = findViewById(R.id.reviewlistscrolllayout);
-
-        writeReviewButton = findViewById(R.id.writereviewbutton);
-
-        appTitleLabel = findViewById(R.id.AppTitle);
-        companyLabel = findViewById(R.id.CompanyName);
-
-        System.out.println("Init");
-        System.out.println(appTitleLabel == null);
-        System.out.println(companyLabel == null);
+        scrollView = findViewById(R.id.applistscroll);
 
         auth = FirebaseAuth.getInstance();
         FirebaseFirestore database = FirebaseFirestore.getInstance();
@@ -67,8 +55,7 @@ public class AppDetailActivity extends AppCompatActivity {
                     public void onSuccess(DocumentSnapshot documentSnapshot) {
                         String appName = documentSnapshot.get("App_Title").toString();
                         String companyName = documentSnapshot.get("Company_Name").toString();
-                        appTitleLabel.setText(appName);
-                        companyLabel.setText("Company Name: " + companyName);
+
                     }
                 });
 
@@ -87,53 +74,18 @@ public class AppDetailActivity extends AppCompatActivity {
                                 String leastFavorite = documentSnapshot.get("Least Favorite Feature").toString();
                                 float rating = Float.parseFloat(documentSnapshot.get("Rating").toString());
 
+                                System.out.println(headline + " " + reviewText + " " + pros + " " + cons + " " + favorite + " " + leastFavorite + " " + rating);
+
                                 Review review = new Review(headline, reviewText, pros, cons, favorite, leastFavorite, rating);
 
                                 System.out.println(review);
 
                                 reviewsList.add(review);
                             }
-
-                            placeReviews();
                         }
                     }
                 });
-        writeReviewButton.setOnClickListener(new View.OnClickListener() {
-                                                 @Override
-                                                 public void onClick(View view) {
-                                                     Intent writeReviewIntent = new Intent(getApplicationContext(),WriteReviewPage.class);
-                                                     writeReviewIntent.putExtra("documentID", documentID);
-                                                     startActivity(writeReviewIntent);
-                                                 }
-                                             });
 
-    }
-
-    private void placeReviews() {
-        int height = 350;
-        for(int i = 0; i < reviewsList.size(); i++) {
-            Review review = reviewsList.get(i);
-            RelativeLayout appLayout = new RelativeLayout(this.getBaseContext());
-            RelativeLayout.LayoutParams linearParams = new RelativeLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, height);
-            appLayout.setLayoutParams(linearParams);
-            scrollView.addView(appLayout);
-
-            appLayout.addView(getTextView(review.getHeadline(), ViewGroup.LayoutParams.MATCH_PARENT, 150, 10, 10, Color.BLACK, 20));
-            appLayout.addView(getTextView(" General Review: " + review.getGeneralReview(), ViewGroup.LayoutParams.MATCH_PARENT, 150, 10, 60, Color.BLACK, 15));
-            appLayout.addView(getTextView(" Pros: " + review.getPros(), ViewGroup.LayoutParams.MATCH_PARENT, 150, 10, 110, Color.BLACK, 15));
-            appLayout.addView(getTextView(" Cons: " + review.getCons(), ViewGroup.LayoutParams.MATCH_PARENT, 150, 10, 160, Color.BLACK, 15));
-            appLayout.addView(getTextView(" Favorite Feature: " + review.getFavoriteFeature(), ViewGroup.LayoutParams.MATCH_PARENT, 150, 10, 210, Color.BLACK, 15));
-            appLayout.addView(getTextView(" Least Favorite Feature: " + review.getLeastFavoriteFeature(), ViewGroup.LayoutParams.MATCH_PARENT, 150, 10, 260, Color.BLACK, 15));
-            appLayout.addView(createLine(ViewGroup.LayoutParams.MATCH_PARENT, 5, 0, 345,  Color.RED));
-            appLayout.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    Intent appDetailIntent = new Intent(getApplicationContext(),AppDetailActivity.class);
-                    appDetailIntent.putExtra("documentID", v.getTag().toString());
-                    startActivity(appDetailIntent);
-                }
-            });
-        }
     }
 
     public String fetchAuthUserID()
@@ -228,27 +180,5 @@ public class AppDetailActivity extends AppCompatActivity {
 
         updateReviewAuthorRepuationScore(authorDocID,favorable, voterWeightValue);
 
-    }
-
-    protected View createLine(int width, int height, int leftMargin, int topMargin, int color) {
-        View view = new View(this.getBaseContext());
-        RelativeLayout.LayoutParams params = new RelativeLayout.LayoutParams(width, height);
-        params.leftMargin = leftMargin;
-        params.topMargin = topMargin;
-        view.setBackgroundColor(color);
-        view.setLayoutParams(params);
-        return view;
-    }
-
-    protected TextView getTextView(String text, int width, int height, int leftMargin, int topMargin, int color, int textSize) {
-        TextView view = new TextView(this.getBaseContext());
-        view.setText(text);
-        RelativeLayout.LayoutParams params = new RelativeLayout.LayoutParams(width, height);
-        params.leftMargin = leftMargin;
-        params.topMargin = topMargin;
-        view.setTextColor(color);
-        view.setTextSize(textSize);
-        view.setLayoutParams(params);
-        return view;
     }
 }

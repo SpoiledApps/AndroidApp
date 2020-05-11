@@ -1460,11 +1460,9 @@ id ALT
 id AddAppPageTitle
 id AddNewAppButton
 id AllListingsButton
-id AppTitle
 id BOTTOM_END
 id BOTTOM_START
 id CTRL
-id CompanyName
 id ConsFillable
 id ConsLabel
 id FUNCTION
@@ -1547,8 +1545,8 @@ id adjust_width
 id alertTitle
 id all
 id always
+id appListScroll2
 id applistscroll
-id applistscrolllayout
 id async
 id auto
 id backtoLogIn
@@ -1714,8 +1712,6 @@ id registrationBackground
 id registrationButton
 id resendEmail
 id resendMessage
-id reviewlistscroll
-id reviewlistscrolllayout
 id right
 id right_icon
 id right_side
@@ -1813,7 +1809,6 @@ id withText
 id wrap
 id wrap_content
 id writeReviewButton
-id writereviewbutton
 integer abc_config_activityDefaultDur
 integer abc_config_activityShortDur
 integer app_bar_elevation_anim_duration
@@ -1877,7 +1872,6 @@ layout abc_search_view
 layout abc_select_dialog_material
 layout abc_tooltip
 layout activity_add_app_page
-layout activity_app_detail
 layout activity_app_list
 layout activity_home_page
 layout activity_login
@@ -1967,7 +1961,6 @@ string Rating
 string ReviewHeadline
 string ReviewInstructions
 string ReviewSubmitButton
-string Writereview
 string abc_action_bar_home_description
 string abc_action_bar_up_description
 string abc_action_menu_overflow_description

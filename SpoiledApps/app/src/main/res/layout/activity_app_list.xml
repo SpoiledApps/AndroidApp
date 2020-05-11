@@ -7,12 +7,12 @@
     tools:context=".AppListActivity">
 
     <ScrollView
-        android:id="@+id/applistscroll"
+        android:id="@+id/appListScroll2"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
         <LinearLayout
-            android:id="@+id/applistscrolllayout"
+            android:id="@+id/applistscroll"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"></LinearLayout>
