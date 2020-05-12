@@ -12,11 +12,13 @@
         android:theme="@style/AppTheme.AppBarOverlay">
 
         <androidx.appcompat.widget.Toolbar
-            android:id="@+id/toolbar"
-            android:layout_width="match_parent"
-            android:layout_height="?attr/actionBarSize"
-            android:background="?attr/colorPrimary"
-            app:popupTheme="@style/AppTheme.PopupOverlay" />
+                android:id="@+id/toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                android:background="?attr/colorPrimary"
+                app:popupTheme="@style/AppTheme.PopupOverlay" app:navigationIcon="@drawable/icon7"
+                android:minHeight="60dp" android:theme="@style/AppTheme.AppBarOverlay" app:title="Spoiling..."
+                app:titleMargin="3dp"/>
 
     </com.google.android.material.appbar.AppBarLayout>
 

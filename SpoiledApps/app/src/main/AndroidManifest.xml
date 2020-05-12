@@ -43,8 +43,8 @@
             android:label="@string/title_activity_home_page" />
 
         <meta-data
-            android:name="preloaded_fonts"
-            android:resource="@array/preloaded_fonts" />
+                android:name="preloaded_fonts"
+                android:resource="@array/preloaded_fonts"/>
     </application>
 
     <uses-permission android:name="android.permission.INTERNET" />
