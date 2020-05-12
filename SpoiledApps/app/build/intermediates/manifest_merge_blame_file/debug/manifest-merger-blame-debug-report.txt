@@ -6,187 +6,187 @@
 6
 7    <uses-sdk
 8        android:minSdkVersion="16"
-8-->C:\Users\shado\Documents\School\NYIT\Spring 2020\CSCI 318 - Programming Language Concepts\AndroidApp-Master\AndroidApp\SpoiledApps\app\src\main\AndroidManifest.xml
+8-->C:\Users\albos\Documents\GitHub\AndroidApp\SpoiledApps\app\src\main\AndroidManifest.xml
 9        android:targetSdkVersion="29" />
-9-->C:\Users\shado\Documents\School\NYIT\Spring 2020\CSCI 318 - Programming Language Concepts\AndroidApp-Master\AndroidApp\SpoiledApps\app\src\main\AndroidManifest.xml
+9-->C:\Users\albos\Documents\GitHub\AndroidApp\SpoiledApps\app\src\main\AndroidManifest.xml
 10
 11    <uses-permission android:name="android.permission.INTERNET" />
-11-->C:\Users\shado\Documents\School\NYIT\Spring 2020\CSCI 318 - Programming Language Concepts\AndroidApp-Master\AndroidApp\SpoiledApps\app\src\main\AndroidManifest.xml:50:5-67
-11-->C:\Users\shado\Documents\School\NYIT\Spring 2020\CSCI 318 - Programming Language Concepts\AndroidApp-Master\AndroidApp\SpoiledApps\app\src\main\AndroidManifest.xml:50:22-64
+11-->C:\Users\albos\Documents\GitHub\AndroidApp\SpoiledApps\app\src\main\AndroidManifest.xml:50:5-67
+11-->C:\Users\albos\Documents\GitHub\AndroidApp\SpoiledApps\app\src\main\AndroidManifest.xml:50:22-64
 12
 13    <!-- Although the *SdkVersion is captured in gradle build files, this is required for non gradle builds -->
 14    <!-- <uses-sdk android:minSdkVersion="14"/> -->
 15    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
-15-->[com.google.firebase:firebase-database:19.3.0] C:\Users\shado\.gradle\caches\transforms-2\files-2.1\a858482f0d85511048b88d680e761880\jetified-firebase-database-19.3.0\AndroidManifest.xml:25:5-79
-15-->[com.google.firebase:firebase-database:19.3.0] C:\Users\shado\.gradle\caches\transforms-2\files-2.1\a858482f0d85511048b88d680e761880\jetified-firebase-database-19.3.0\AndroidManifest.xml:25:22-76
+15-->[com.google.firebase:firebase-database:19.3.0] C:\Users\albos\.gradle\caches\transforms-2\files-2.1\a858482f0d85511048b88d680e761880\jetified-firebase-database-19.3.0\AndroidManifest.xml:25:5-79
+15-->[com.google.firebase:firebase-database:19.3.0] C:\Users\albos\.gradle\caches\transforms-2\files-2.1\a858482f0d85511048b88d680e761880\jetified-firebase-database-19.3.0\AndroidManifest.xml:25:22-76
 16
 17    <application
-17-->C:\Users\shado\Documents\School\NYIT\Spring 2020\CSCI 318 - Programming Language Concepts\AndroidApp-Master\AndroidApp\SpoiledApps\app\src\main\AndroidManifest.xml:5:5-48:19
+17-->C:\Users\albos\Documents\GitHub\AndroidApp\SpoiledApps\app\src\main\AndroidManifest.xml:5:5-48:19
 18        android:name="androidx.multidex.MultiDexApplication"
 19        android:allowBackup="true"
-19-->C:\Users\shado\Documents\School\NYIT\Spring 2020\CSCI 318 - Programming Language Concepts\AndroidApp-Master\AndroidApp\SpoiledApps\app\src\main\AndroidManifest.xml:6:9-35
+19-->C:\Users\albos\Documents\GitHub\AndroidApp\SpoiledApps\app\src\main\AndroidManifest.xml:6:9-35
 20        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
-20-->[androidx.core:core:1.1.0] C:\Users\shado\.gradle\caches\transforms-2\files-2.1\bcfc0b80df78591183083cc148e1cf2c\core-1.1.0\AndroidManifest.xml:24:18-86
+20-->[androidx.core:core:1.1.0] C:\Users\albos\.gradle\caches\transforms-2\files-2.1\bcfc0b80df78591183083cc148e1cf2c\core-1.1.0\AndroidManifest.xml:24:18-86
 21        android:debuggable="true"
 22        android:icon="@mipmap/ic_launcher"
-22-->C:\Users\shado\Documents\School\NYIT\Spring 2020\CSCI 318 - Programming Language Concepts\AndroidApp-Master\AndroidApp\SpoiledApps\app\src\main\AndroidManifest.xml:7:9-43
+22-->C:\Users\albos\Documents\GitHub\AndroidApp\SpoiledApps\app\src\main\AndroidManifest.xml:7:9-43
 23        android:label="@string/app_name"
-23-->C:\Users\shado\Documents\School\NYIT\Spring 2020\CSCI 318 - Programming Language Concepts\AndroidApp-Master\AndroidApp\SpoiledApps\app\src\main\AndroidManifest.xml:8:9-41
+23-->C:\Users\albos\Documents\GitHub\AndroidApp\SpoiledApps\app\src\main\AndroidManifest.xml:8:9-41
 24        android:roundIcon="@mipmap/ic_launcher_round"
-24-->C:\Users\shado\Documents\School\NYIT\Spring 2020\CSCI 318 - Programming Language Concepts\AndroidApp-Master\AndroidApp\SpoiledApps\app\src\main\AndroidManifest.xml:9:9-54
+24-->C:\Users\albos\Documents\GitHub\AndroidApp\SpoiledApps\app\src\main\AndroidManifest.xml:9:9-54
 25        android:supportsRtl="true"
-25-->C:\Users\shado\Documents\School\NYIT\Spring 2020\CSCI 318 - Programming Language Concepts\AndroidApp-Master\AndroidApp\SpoiledApps\app\src\main\AndroidManifest.xml:10:9-35
+25-->C:\Users\albos\Documents\GitHub\AndroidApp\SpoiledApps\app\src\main\AndroidManifest.xml:10:9-35
 26        android:testOnly="true"
 27        android:theme="@style/AppTheme" >
-27-->C:\Users\shado\Documents\School\NYIT\Spring 2020\CSCI 318 - Programming Language Concepts\AndroidApp-Master\AndroidApp\SpoiledApps\app\src\main\AndroidManifest.xml:11:9-40
+27-->C:\Users\albos\Documents\GitHub\AndroidApp\SpoiledApps\app\src\main\AndroidManifest.xml:11:9-40
 28        <activity
-28-->C:\Users\shado\Documents\School\NYIT\Spring 2020\CSCI 318 - Programming Language Concepts\AndroidApp-Master\AndroidApp\SpoiledApps\app\src\main\AndroidManifest.xml:12:9-17:20
+28-->C:\Users\albos\Documents\GitHub\AndroidApp\SpoiledApps\app\src\main\AndroidManifest.xml:12:9-17:20
 29            android:name="com.example.spoiledapps.AppListActivity"
-29-->C:\Users\shado\Documents\School\NYIT\Spring 2020\CSCI 318 - Programming Language Concepts\AndroidApp-Master\AndroidApp\SpoiledApps\app\src\main\AndroidManifest.xml:13:13-44
+29-->C:\Users\albos\Documents\GitHub\AndroidApp\SpoiledApps\app\src\main\AndroidManifest.xml:13:13-44
 30            android:label="@string/title_activity_app_list"
-30-->C:\Users\shado\Documents\School\NYIT\Spring 2020\CSCI 318 - Programming Language Concepts\AndroidApp-Master\AndroidApp\SpoiledApps\app\src\main\AndroidManifest.xml:14:13-60
+30-->C:\Users\albos\Documents\GitHub\AndroidApp\SpoiledApps\app\src\main\AndroidManifest.xml:14:13-60
 31            android:theme="@style/AppTheme.NoActionBar" >
-31-->C:\Users\shado\Documents\School\NYIT\Spring 2020\CSCI 318 - Programming Language Concepts\AndroidApp-Master\AndroidApp\SpoiledApps\app\src\main\AndroidManifest.xml:15:13-56
+31-->C:\Users\albos\Documents\GitHub\AndroidApp\SpoiledApps\app\src\main\AndroidManifest.xml:15:13-56
 32        </activity>
 33        <activity
-33-->C:\Users\shado\Documents\School\NYIT\Spring 2020\CSCI 318 - Programming Language Concepts\AndroidApp-Master\AndroidApp\SpoiledApps\app\src\main\AndroidManifest.xml:18:9-27:20
+33-->C:\Users\albos\Documents\GitHub\AndroidApp\SpoiledApps\app\src\main\AndroidManifest.xml:18:9-23:20
 34            android:name="com.example.spoiledapps.AppDetailActivity"
-34-->C:\Users\shado\Documents\School\NYIT\Spring 2020\CSCI 318 - Programming Language Concepts\AndroidApp-Master\AndroidApp\SpoiledApps\app\src\main\AndroidManifest.xml:19:13-46
+34-->C:\Users\albos\Documents\GitHub\AndroidApp\SpoiledApps\app\src\main\AndroidManifest.xml:19:13-46
 35            android:label="@string/title_activity_app_list"
-35-->C:\Users\shado\Documents\School\NYIT\Spring 2020\CSCI 318 - Programming Language Concepts\AndroidApp-Master\AndroidApp\SpoiledApps\app\src\main\AndroidManifest.xml:20:13-60
+35-->C:\Users\albos\Documents\GitHub\AndroidApp\SpoiledApps\app\src\main\AndroidManifest.xml:20:13-60
 36            android:theme="@style/AppTheme.NoActionBar" >
-36-->C:\Users\shado\Documents\School\NYIT\Spring 2020\CSCI 318 - Programming Language Concepts\AndroidApp-Master\AndroidApp\SpoiledApps\app\src\main\AndroidManifest.xml:21:13-56
-37            <intent-filter>
-37-->C:\Users\shado\Documents\School\NYIT\Spring 2020\CSCI 318 - Programming Language Concepts\AndroidApp-Master\AndroidApp\SpoiledApps\app\src\main\AndroidManifest.xml:22:13-26:29
-38                <action android:name="android.intent.action.MAIN" />
-38-->C:\Users\shado\Documents\School\NYIT\Spring 2020\CSCI 318 - Programming Language Concepts\AndroidApp-Master\AndroidApp\SpoiledApps\app\src\main\AndroidManifest.xml:23:17-69
-38-->C:\Users\shado\Documents\School\NYIT\Spring 2020\CSCI 318 - Programming Language Concepts\AndroidApp-Master\AndroidApp\SpoiledApps\app\src\main\AndroidManifest.xml:23:25-66
-39
-40                <category android:name="android.intent.category.LAUNCHER" />
-40-->C:\Users\shado\Documents\School\NYIT\Spring 2020\CSCI 318 - Programming Language Concepts\AndroidApp-Master\AndroidApp\SpoiledApps\app\src\main\AndroidManifest.xml:25:17-77
-40-->C:\Users\shado\Documents\School\NYIT\Spring 2020\CSCI 318 - Programming Language Concepts\AndroidApp-Master\AndroidApp\SpoiledApps\app\src\main\AndroidManifest.xml:25:27-74
-41            </intent-filter>
-42        </activity>
-43        <activity android:name="com.example.spoiledapps.LoginActivity" >
-43-->C:\Users\shado\Documents\School\NYIT\Spring 2020\CSCI 318 - Programming Language Concepts\AndroidApp-Master\AndroidApp\SpoiledApps\app\src\main\AndroidManifest.xml:28:9-30:20
-43-->C:\Users\shado\Documents\School\NYIT\Spring 2020\CSCI 318 - Programming Language Concepts\AndroidApp-Master\AndroidApp\SpoiledApps\app\src\main\AndroidManifest.xml:28:19-48
+36-->C:\Users\albos\Documents\GitHub\AndroidApp\SpoiledApps\app\src\main\AndroidManifest.xml:21:13-56
+37        </activity>
+38        <activity android:name="com.example.spoiledapps.LoginActivity" >
+38-->C:\Users\albos\Documents\GitHub\AndroidApp\SpoiledApps\app\src\main\AndroidManifest.xml:24:9-30:20
+38-->C:\Users\albos\Documents\GitHub\AndroidApp\SpoiledApps\app\src\main\AndroidManifest.xml:24:19-48
+39            <intent-filter>
+39-->C:\Users\albos\Documents\GitHub\AndroidApp\SpoiledApps\app\src\main\AndroidManifest.xml:25:13-29:29
+40                <action android:name="android.intent.action.MAIN" />
+40-->C:\Users\albos\Documents\GitHub\AndroidApp\SpoiledApps\app\src\main\AndroidManifest.xml:26:17-69
+40-->C:\Users\albos\Documents\GitHub\AndroidApp\SpoiledApps\app\src\main\AndroidManifest.xml:26:25-66
+41
+42                <category android:name="android.intent.category.LAUNCHER" />
+42-->C:\Users\albos\Documents\GitHub\AndroidApp\SpoiledApps\app\src\main\AndroidManifest.xml:28:17-77
+42-->C:\Users\albos\Documents\GitHub\AndroidApp\SpoiledApps\app\src\main\AndroidManifest.xml:28:27-74
+43            </intent-filter>
 44        </activity>
 45        <activity android:name="com.example.spoiledapps.verificationPage" />
-45-->C:\Users\shado\Documents\School\NYIT\Spring 2020\CSCI 318 - Programming Language Concepts\AndroidApp-Master\AndroidApp\SpoiledApps\app\src\main\AndroidManifest.xml:31:9-54
-45-->C:\Users\shado\Documents\School\NYIT\Spring 2020\CSCI 318 - Programming Language Concepts\AndroidApp-Master\AndroidApp\SpoiledApps\app\src\main\AndroidManifest.xml:31:19-51
+45-->C:\Users\albos\Documents\GitHub\AndroidApp\SpoiledApps\app\src\main\AndroidManifest.xml:31:9-54
+45-->C:\Users\albos\Documents\GitHub\AndroidApp\SpoiledApps\app\src\main\AndroidManifest.xml:31:19-51
 46        <activity
-46-->C:\Users\shado\Documents\School\NYIT\Spring 2020\CSCI 318 - Programming Language Concepts\AndroidApp-Master\AndroidApp\SpoiledApps\app\src\main\AndroidManifest.xml:32:9-35:59
+46-->C:\Users\albos\Documents\GitHub\AndroidApp\SpoiledApps\app\src\main\AndroidManifest.xml:32:9-35:59
 47            android:name="com.example.spoiledapps.WriteReviewPage"
-47-->C:\Users\shado\Documents\School\NYIT\Spring 2020\CSCI 318 - Programming Language Concepts\AndroidApp-Master\AndroidApp\SpoiledApps\app\src\main\AndroidManifest.xml:33:13-44
+47-->C:\Users\albos\Documents\GitHub\AndroidApp\SpoiledApps\app\src\main\AndroidManifest.xml:33:13-44
 48            android:label="@string/title_activity_write_review_page"
-48-->C:\Users\shado\Documents\School\NYIT\Spring 2020\CSCI 318 - Programming Language Concepts\AndroidApp-Master\AndroidApp\SpoiledApps\app\src\main\AndroidManifest.xml:34:13-69
+48-->C:\Users\albos\Documents\GitHub\AndroidApp\SpoiledApps\app\src\main\AndroidManifest.xml:34:13-69
 49            android:theme="@style/AppTheme.NoActionBar" />
-49-->C:\Users\shado\Documents\School\NYIT\Spring 2020\CSCI 318 - Programming Language Concepts\AndroidApp-Master\AndroidApp\SpoiledApps\app\src\main\AndroidManifest.xml:35:13-56
+49-->C:\Users\albos\Documents\GitHub\AndroidApp\SpoiledApps\app\src\main\AndroidManifest.xml:35:13-56
 50        <activity
-50-->C:\Users\shado\Documents\School\NYIT\Spring 2020\CSCI 318 - Programming Language Concepts\AndroidApp-Master\AndroidApp\SpoiledApps\app\src\main\AndroidManifest.xml:36:9-39:59
+50-->C:\Users\albos\Documents\GitHub\AndroidApp\SpoiledApps\app\src\main\AndroidManifest.xml:36:9-39:59
 51            android:name="com.example.spoiledapps.AddAppPage"
-51-->C:\Users\shado\Documents\School\NYIT\Spring 2020\CSCI 318 - Programming Language Concepts\AndroidApp-Master\AndroidApp\SpoiledApps\app\src\main\AndroidManifest.xml:37:13-39
+51-->C:\Users\albos\Documents\GitHub\AndroidApp\SpoiledApps\app\src\main\AndroidManifest.xml:37:13-39
 52            android:label="@string/title_activity_add_app_page"
-52-->C:\Users\shado\Documents\School\NYIT\Spring 2020\CSCI 318 - Programming Language Concepts\AndroidApp-Master\AndroidApp\SpoiledApps\app\src\main\AndroidManifest.xml:38:13-64
+52-->C:\Users\albos\Documents\GitHub\AndroidApp\SpoiledApps\app\src\main\AndroidManifest.xml:38:13-64
 53            android:theme="@style/AppTheme.NoActionBar" />
-53-->C:\Users\shado\Documents\School\NYIT\Spring 2020\CSCI 318 - Programming Language Concepts\AndroidApp-Master\AndroidApp\SpoiledApps\app\src\main\AndroidManifest.xml:39:13-56
+53-->C:\Users\albos\Documents\GitHub\AndroidApp\SpoiledApps\app\src\main\AndroidManifest.xml:39:13-56
 54        <activity android:name="com.example.spoiledapps.RegistrationActivity" />
-54-->C:\Users\shado\Documents\School\NYIT\Spring 2020\CSCI 318 - Programming Language Concepts\AndroidApp-Master\AndroidApp\SpoiledApps\app\src\main\AndroidManifest.xml:40:9-58
-54-->C:\Users\shado\Documents\School\NYIT\Spring 2020\CSCI 318 - Programming Language Concepts\AndroidApp-Master\AndroidApp\SpoiledApps\app\src\main\AndroidManifest.xml:40:19-55
+54-->C:\Users\albos\Documents\GitHub\AndroidApp\SpoiledApps\app\src\main\AndroidManifest.xml:40:9-58
+54-->C:\Users\albos\Documents\GitHub\AndroidApp\SpoiledApps\app\src\main\AndroidManifest.xml:40:19-55
 55        <activity
-55-->C:\Users\shado\Documents\School\NYIT\Spring 2020\CSCI 318 - Programming Language Concepts\AndroidApp-Master\AndroidApp\SpoiledApps\app\src\main\AndroidManifest.xml:41:9-43:64
+55-->C:\Users\albos\Documents\GitHub\AndroidApp\SpoiledApps\app\src\main\AndroidManifest.xml:41:9-43:64
 56            android:name="com.example.spoiledapps.HomePageActivity"
-56-->C:\Users\shado\Documents\School\NYIT\Spring 2020\CSCI 318 - Programming Language Concepts\AndroidApp-Master\AndroidApp\SpoiledApps\app\src\main\AndroidManifest.xml:42:13-45
+56-->C:\Users\albos\Documents\GitHub\AndroidApp\SpoiledApps\app\src\main\AndroidManifest.xml:42:13-45
 57            android:label="@string/title_activity_home_page" />
-57-->C:\Users\shado\Documents\School\NYIT\Spring 2020\CSCI 318 - Programming Language Concepts\AndroidApp-Master\AndroidApp\SpoiledApps\app\src\main\AndroidManifest.xml:43:13-61
+57-->C:\Users\albos\Documents\GitHub\AndroidApp\SpoiledApps\app\src\main\AndroidManifest.xml:43:13-61
 58
 59        <meta-data
-59-->C:\Users\shado\Documents\School\NYIT\Spring 2020\CSCI 318 - Programming Language Concepts\AndroidApp-Master\AndroidApp\SpoiledApps\app\src\main\AndroidManifest.xml:45:9-47:57
+59-->C:\Users\albos\Documents\GitHub\AndroidApp\SpoiledApps\app\src\main\AndroidManifest.xml:45:9-47:57
 60            android:name="preloaded_fonts"
-60-->C:\Users\shado\Documents\School\NYIT\Spring 2020\CSCI 318 - Programming Language Concepts\AndroidApp-Master\AndroidApp\SpoiledApps\app\src\main\AndroidManifest.xml:46:13-43
+60-->C:\Users\albos\Documents\GitHub\AndroidApp\SpoiledApps\app\src\main\AndroidManifest.xml:46:13-43
 61            android:resource="@array/preloaded_fonts" />
-61-->C:\Users\shado\Documents\School\NYIT\Spring 2020\CSCI 318 - Programming Language Concepts\AndroidApp-Master\AndroidApp\SpoiledApps\app\src\main\AndroidManifest.xml:47:13-54
+61-->C:\Users\albos\Documents\GitHub\AndroidApp\SpoiledApps\app\src\main\AndroidManifest.xml:47:13-54
 62
 63        <service
-63-->[com.google.firebase:firebase-database:19.3.0] C:\Users\shado\.gradle\caches\transforms-2\files-2.1\a858482f0d85511048b88d680e761880\jetified-firebase-database-19.3.0\AndroidManifest.xml:29:9-35:19
+63-->[com.google.firebase:firebase-database:19.3.0] C:\Users\albos\.gradle\caches\transforms-2\files-2.1\a858482f0d85511048b88d680e761880\jetified-firebase-database-19.3.0\AndroidManifest.xml:29:9-35:19
 64            android:name="com.google.firebase.components.ComponentDiscoveryService"
-64-->[com.google.firebase:firebase-database:19.3.0] C:\Users\shado\.gradle\caches\transforms-2\files-2.1\a858482f0d85511048b88d680e761880\jetified-firebase-database-19.3.0\AndroidManifest.xml:30:13-84
+64-->[com.google.firebase:firebase-database:19.3.0] C:\Users\albos\.gradle\caches\transforms-2\files-2.1\a858482f0d85511048b88d680e761880\jetified-firebase-database-19.3.0\AndroidManifest.xml:30:13-84
 65            android:directBootAware="true"
-65-->[com.google.firebase:firebase-common:19.3.0] C:\Users\shado\.gradle\caches\transforms-2\files-2.1\3deb10f8139ef5717b3d54ada2a19ca4\jetified-firebase-common-19.3.0\AndroidManifest.xml:34:13-43
+65-->[com.google.firebase:firebase-common:19.3.0] C:\Users\albos\.gradle\caches\transforms-2\files-2.1\3deb10f8139ef5717b3d54ada2a19ca4\jetified-firebase-common-19.3.0\AndroidManifest.xml:34:13-43
 66            android:exported="false" >
-66-->[com.google.firebase:firebase-database:19.3.0] C:\Users\shado\.gradle\caches\transforms-2\files-2.1\a858482f0d85511048b88d680e761880\jetified-firebase-database-19.3.0\AndroidManifest.xml:31:13-37
+66-->[com.google.firebase:firebase-database:19.3.0] C:\Users\albos\.gradle\caches\transforms-2\files-2.1\a858482f0d85511048b88d680e761880\jetified-firebase-database-19.3.0\AndroidManifest.xml:31:13-37
 67            <meta-data
-67-->[com.google.firebase:firebase-database:19.3.0] C:\Users\shado\.gradle\caches\transforms-2\files-2.1\a858482f0d85511048b88d680e761880\jetified-firebase-database-19.3.0\AndroidManifest.xml:32:13-34:85
+67-->[com.google.firebase:firebase-database:19.3.0] C:\Users\albos\.gradle\caches\transforms-2\files-2.1\a858482f0d85511048b88d680e761880\jetified-firebase-database-19.3.0\AndroidManifest.xml:32:13-34:85
 68                android:name="com.google.firebase.components:com.google.firebase.database.DatabaseRegistrar"
-68-->[com.google.firebase:firebase-database:19.3.0] C:\Users\shado\.gradle\caches\transforms-2\files-2.1\a858482f0d85511048b88d680e761880\jetified-firebase-database-19.3.0\AndroidManifest.xml:33:17-109
+68-->[com.google.firebase:firebase-database:19.3.0] C:\Users\albos\.gradle\caches\transforms-2\files-2.1\a858482f0d85511048b88d680e761880\jetified-firebase-database-19.3.0\AndroidManifest.xml:33:17-109
 69                android:value="com.google.firebase.components.ComponentRegistrar" />
-69-->[com.google.firebase:firebase-database:19.3.0] C:\Users\shado\.gradle\caches\transforms-2\files-2.1\a858482f0d85511048b88d680e761880\jetified-firebase-database-19.3.0\AndroidManifest.xml:34:17-82
+69-->[com.google.firebase:firebase-database:19.3.0] C:\Users\albos\.gradle\caches\transforms-2\files-2.1\a858482f0d85511048b88d680e761880\jetified-firebase-database-19.3.0\AndroidManifest.xml:34:17-82
 70            <meta-data
-70-->[com.google.firebase:firebase-firestore:21.4.3] C:\Users\shado\.gradle\caches\transforms-2\files-2.1\1dc1d8b46e8da592d1f149b8329b2922\jetified-firebase-firestore-21.4.3\AndroidManifest.xml:20:13-22:85
+70-->[com.google.firebase:firebase-firestore:21.4.3] C:\Users\albos\.gradle\caches\transforms-2\files-2.1\1dc1d8b46e8da592d1f149b8329b2922\jetified-firebase-firestore-21.4.3\AndroidManifest.xml:20:13-22:85
 71                android:name="com.google.firebase.components:com.google.firebase.firestore.FirestoreRegistrar"
-71-->[com.google.firebase:firebase-firestore:21.4.3] C:\Users\shado\.gradle\caches\transforms-2\files-2.1\1dc1d8b46e8da592d1f149b8329b2922\jetified-firebase-firestore-21.4.3\AndroidManifest.xml:21:17-111
+71-->[com.google.firebase:firebase-firestore:21.4.3] C:\Users\albos\.gradle\caches\transforms-2\files-2.1\1dc1d8b46e8da592d1f149b8329b2922\jetified-firebase-firestore-21.4.3\AndroidManifest.xml:21:17-111
 72                android:value="com.google.firebase.components.ComponentRegistrar" />
-72-->[com.google.firebase:firebase-firestore:21.4.3] C:\Users\shado\.gradle\caches\transforms-2\files-2.1\1dc1d8b46e8da592d1f149b8329b2922\jetified-firebase-firestore-21.4.3\AndroidManifest.xml:22:17-82
+72-->[com.google.firebase:firebase-firestore:21.4.3] C:\Users\albos\.gradle\caches\transforms-2\files-2.1\1dc1d8b46e8da592d1f149b8329b2922\jetified-firebase-firestore-21.4.3\AndroidManifest.xml:22:17-82
 73            <meta-data
-73-->[com.google.firebase:firebase-auth:19.3.1] C:\Users\shado\.gradle\caches\transforms-2\files-2.1\a965e02da0dc74b3cb82526fa169fefe\jetified-firebase-auth-19.3.1\AndroidManifest.xml:36:13-38:85
+73-->[com.google.firebase:firebase-auth:19.3.1] C:\Users\albos\.gradle\caches\transforms-2\files-2.1\a965e02da0dc74b3cb82526fa169fefe\jetified-firebase-auth-19.3.1\AndroidManifest.xml:36:13-38:85
 74                android:name="com.google.firebase.components:com.google.firebase.auth.FirebaseAuthRegistrar"
-74-->[com.google.firebase:firebase-auth:19.3.1] C:\Users\shado\.gradle\caches\transforms-2\files-2.1\a965e02da0dc74b3cb82526fa169fefe\jetified-firebase-auth-19.3.1\AndroidManifest.xml:37:17-109
+74-->[com.google.firebase:firebase-auth:19.3.1] C:\Users\albos\.gradle\caches\transforms-2\files-2.1\a965e02da0dc74b3cb82526fa169fefe\jetified-firebase-auth-19.3.1\AndroidManifest.xml:37:17-109
 75                android:value="com.google.firebase.components.ComponentRegistrar" />
-75-->[com.google.firebase:firebase-auth:19.3.1] C:\Users\shado\.gradle\caches\transforms-2\files-2.1\a965e02da0dc74b3cb82526fa169fefe\jetified-firebase-auth-19.3.1\AndroidManifest.xml:38:17-82
+75-->[com.google.firebase:firebase-auth:19.3.1] C:\Users\albos\.gradle\caches\transforms-2\files-2.1\a965e02da0dc74b3cb82526fa169fefe\jetified-firebase-auth-19.3.1\AndroidManifest.xml:38:17-82
 76        </service>
 77
 78        <activity
-78-->[com.google.firebase:firebase-auth:19.3.1] C:\Users\shado\.gradle\caches\transforms-2\files-2.1\a965e02da0dc74b3cb82526fa169fefe\jetified-firebase-auth-19.3.1\AndroidManifest.xml:24:9-31:50
+78-->[com.google.firebase:firebase-auth:19.3.1] C:\Users\albos\.gradle\caches\transforms-2\files-2.1\a965e02da0dc74b3cb82526fa169fefe\jetified-firebase-auth-19.3.1\AndroidManifest.xml:24:9-31:50
 79            android:name="com.google.firebase.auth.internal.FederatedSignInActivity"
-79-->[com.google.firebase:firebase-auth:19.3.1] C:\Users\shado\.gradle\caches\transforms-2\files-2.1\a965e02da0dc74b3cb82526fa169fefe\jetified-firebase-auth-19.3.1\AndroidManifest.xml:25:13-85
+79-->[com.google.firebase:firebase-auth:19.3.1] C:\Users\albos\.gradle\caches\transforms-2\files-2.1\a965e02da0dc74b3cb82526fa169fefe\jetified-firebase-auth-19.3.1\AndroidManifest.xml:25:13-85
 80            android:excludeFromRecents="true"
-80-->[com.google.firebase:firebase-auth:19.3.1] C:\Users\shado\.gradle\caches\transforms-2\files-2.1\a965e02da0dc74b3cb82526fa169fefe\jetified-firebase-auth-19.3.1\AndroidManifest.xml:26:13-46
+80-->[com.google.firebase:firebase-auth:19.3.1] C:\Users\albos\.gradle\caches\transforms-2\files-2.1\a965e02da0dc74b3cb82526fa169fefe\jetified-firebase-auth-19.3.1\AndroidManifest.xml:26:13-46
 81            android:exported="true"
-81-->[com.google.firebase:firebase-auth:19.3.1] C:\Users\shado\.gradle\caches\transforms-2\files-2.1\a965e02da0dc74b3cb82526fa169fefe\jetified-firebase-auth-19.3.1\AndroidManifest.xml:27:13-36
+81-->[com.google.firebase:firebase-auth:19.3.1] C:\Users\albos\.gradle\caches\transforms-2\files-2.1\a965e02da0dc74b3cb82526fa169fefe\jetified-firebase-auth-19.3.1\AndroidManifest.xml:27:13-36
 82            android:launchMode="singleTask"
-82-->[com.google.firebase:firebase-auth:19.3.1] C:\Users\shado\.gradle\caches\transforms-2\files-2.1\a965e02da0dc74b3cb82526fa169fefe\jetified-firebase-auth-19.3.1\AndroidManifest.xml:28:13-44
+82-->[com.google.firebase:firebase-auth:19.3.1] C:\Users\albos\.gradle\caches\transforms-2\files-2.1\a965e02da0dc74b3cb82526fa169fefe\jetified-firebase-auth-19.3.1\AndroidManifest.xml:28:13-44
 83            android:permission="com.google.firebase.auth.api.gms.permission.LAUNCH_FEDERATED_SIGN_IN"
-83-->[com.google.firebase:firebase-auth:19.3.1] C:\Users\shado\.gradle\caches\transforms-2\files-2.1\a965e02da0dc74b3cb82526fa169fefe\jetified-firebase-auth-19.3.1\AndroidManifest.xml:29:13-102
+83-->[com.google.firebase:firebase-auth:19.3.1] C:\Users\albos\.gradle\caches\transforms-2\files-2.1\a965e02da0dc74b3cb82526fa169fefe\jetified-firebase-auth-19.3.1\AndroidManifest.xml:29:13-102
 84            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
-84-->[com.google.firebase:firebase-auth:19.3.1] C:\Users\shado\.gradle\caches\transforms-2\files-2.1\a965e02da0dc74b3cb82526fa169fefe\jetified-firebase-auth-19.3.1\AndroidManifest.xml:30:13-72
+84-->[com.google.firebase:firebase-auth:19.3.1] C:\Users\albos\.gradle\caches\transforms-2\files-2.1\a965e02da0dc74b3cb82526fa169fefe\jetified-firebase-auth-19.3.1\AndroidManifest.xml:30:13-72
 85
 86        <provider
-86-->[com.google.firebase:firebase-common:19.3.0] C:\Users\shado\.gradle\caches\transforms-2\files-2.1\3deb10f8139ef5717b3d54ada2a19ca4\jetified-firebase-common-19.3.0\AndroidManifest.xml:26:9-30:39
+86-->[com.google.firebase:firebase-common:19.3.0] C:\Users\albos\.gradle\caches\transforms-2\files-2.1\3deb10f8139ef5717b3d54ada2a19ca4\jetified-firebase-common-19.3.0\AndroidManifest.xml:26:9-30:39
 87            android:name="com.google.firebase.provider.FirebaseInitProvider"
-87-->[com.google.firebase:firebase-common:19.3.0] C:\Users\shado\.gradle\caches\transforms-2\files-2.1\3deb10f8139ef5717b3d54ada2a19ca4\jetified-firebase-common-19.3.0\AndroidManifest.xml:27:13-77
+87-->[com.google.firebase:firebase-common:19.3.0] C:\Users\albos\.gradle\caches\transforms-2\files-2.1\3deb10f8139ef5717b3d54ada2a19ca4\jetified-firebase-common-19.3.0\AndroidManifest.xml:27:13-77
 88            android:authorities="com.example.spoiledapps.firebaseinitprovider"
-88-->[com.google.firebase:firebase-common:19.3.0] C:\Users\shado\.gradle\caches\transforms-2\files-2.1\3deb10f8139ef5717b3d54ada2a19ca4\jetified-firebase-common-19.3.0\AndroidManifest.xml:28:13-72
+88-->[com.google.firebase:firebase-common:19.3.0] C:\Users\albos\.gradle\caches\transforms-2\files-2.1\3deb10f8139ef5717b3d54ada2a19ca4\jetified-firebase-common-19.3.0\AndroidManifest.xml:28:13-72
 89            android:exported="false"
-89-->[com.google.firebase:firebase-common:19.3.0] C:\Users\shado\.gradle\caches\transforms-2\files-2.1\3deb10f8139ef5717b3d54ada2a19ca4\jetified-firebase-common-19.3.0\AndroidManifest.xml:29:13-37
+89-->[com.google.firebase:firebase-common:19.3.0] C:\Users\albos\.gradle\caches\transforms-2\files-2.1\3deb10f8139ef5717b3d54ada2a19ca4\jetified-firebase-common-19.3.0\AndroidManifest.xml:29:13-37
 90            android:initOrder="100" />
-90-->[com.google.firebase:firebase-common:19.3.0] C:\Users\shado\.gradle\caches\transforms-2\files-2.1\3deb10f8139ef5717b3d54ada2a19ca4\jetified-firebase-common-19.3.0\AndroidManifest.xml:30:13-36
+90-->[com.google.firebase:firebase-common:19.3.0] C:\Users\albos\.gradle\caches\transforms-2\files-2.1\3deb10f8139ef5717b3d54ada2a19ca4\jetified-firebase-common-19.3.0\AndroidManifest.xml:30:13-36
 91
 92        <activity
-92-->[com.google.android.gms:play-services-base:17.1.0] C:\Users\shado\.gradle\caches\transforms-2\files-2.1\75e7c473eccef2b3a0eec97fa3a7825b\jetified-play-services-base-17.1.0\AndroidManifest.xml:23:9-26:75
+92-->[com.google.android.gms:play-services-base:17.1.0] C:\Users\albos\.gradle\caches\transforms-2\files-2.1\75e7c473eccef2b3a0eec97fa3a7825b\jetified-play-services-base-17.1.0\AndroidManifest.xml:23:9-26:75
 93            android:name="com.google.android.gms.common.api.GoogleApiActivity"
-93-->[com.google.android.gms:play-services-base:17.1.0] C:\Users\shado\.gradle\caches\transforms-2\files-2.1\75e7c473eccef2b3a0eec97fa3a7825b\jetified-play-services-base-17.1.0\AndroidManifest.xml:24:13-79
+93-->[com.google.android.gms:play-services-base:17.1.0] C:\Users\albos\.gradle\caches\transforms-2\files-2.1\75e7c473eccef2b3a0eec97fa3a7825b\jetified-play-services-base-17.1.0\AndroidManifest.xml:24:13-79
 94            android:exported="false"
-94-->[com.google.android.gms:play-services-base:17.1.0] C:\Users\shado\.gradle\caches\transforms-2\files-2.1\75e7c473eccef2b3a0eec97fa3a7825b\jetified-play-services-base-17.1.0\AndroidManifest.xml:25:13-37
+94-->[com.google.android.gms:play-services-base:17.1.0] C:\Users\albos\.gradle\caches\transforms-2\files-2.1\75e7c473eccef2b3a0eec97fa3a7825b\jetified-play-services-base-17.1.0\AndroidManifest.xml:25:13-37
 95            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
-95-->[com.google.android.gms:play-services-base:17.1.0] C:\Users\shado\.gradle\caches\transforms-2\files-2.1\75e7c473eccef2b3a0eec97fa3a7825b\jetified-play-services-base-17.1.0\AndroidManifest.xml:26:13-72
+95-->[com.google.android.gms:play-services-base:17.1.0] C:\Users\albos\.gradle\caches\transforms-2\files-2.1\75e7c473eccef2b3a0eec97fa3a7825b\jetified-play-services-base-17.1.0\AndroidManifest.xml:26:13-72
 96
 97        <meta-data
-97-->[com.google.android.gms:play-services-basement:17.0.0] C:\Users\shado\.gradle\caches\transforms-2\files-2.1\164bb505b81f338baa0db13edd04c1d1\jetified-play-services-basement-17.0.0\AndroidManifest.xml:23:9-25:69
+97-->[com.google.android.gms:play-services-basement:17.0.0] C:\Users\albos\.gradle\caches\transforms-2\files-2.1\164bb505b81f338baa0db13edd04c1d1\jetified-play-services-basement-17.0.0\AndroidManifest.xml:23:9-25:69
 98            android:name="com.google.android.gms.version"
-98-->[com.google.android.gms:play-services-basement:17.0.0] C:\Users\shado\.gradle\caches\transforms-2\files-2.1\164bb505b81f338baa0db13edd04c1d1\jetified-play-services-basement-17.0.0\AndroidManifest.xml:24:13-58
+98-->[com.google.android.gms:play-services-basement:17.0.0] C:\Users\albos\.gradle\caches\transforms-2\files-2.1\164bb505b81f338baa0db13edd04c1d1\jetified-play-services-basement-17.0.0\AndroidManifest.xml:24:13-58
 99            android:value="@integer/google_play_services_version" />
-99-->[com.google.android.gms:play-services-basement:17.0.0] C:\Users\shado\.gradle\caches\transforms-2\files-2.1\164bb505b81f338baa0db13edd04c1d1\jetified-play-services-basement-17.0.0\AndroidManifest.xml:25:13-66
+99-->[com.google.android.gms:play-services-basement:17.0.0] C:\Users\albos\.gradle\caches\transforms-2\files-2.1\164bb505b81f338baa0db13edd04c1d1\jetified-play-services-basement-17.0.0\AndroidManifest.xml:25:13-66
 100
 101        <provider
-101-->[androidx.lifecycle:lifecycle-process:2.2.0] C:\Users\shado\.gradle\caches\transforms-2\files-2.1\f8e2b213c9c6535c422622afbf842b10\jetified-lifecycle-process-2.2.0\AndroidManifest.xml:25:9-29:43
+101-->[androidx.lifecycle:lifecycle-process:2.2.0] C:\Users\albos\.gradle\caches\transforms-2\files-2.1\f8e2b213c9c6535c422622afbf842b10\jetified-lifecycle-process-2.2.0\AndroidManifest.xml:25:9-29:43
 102            android:name="androidx.lifecycle.ProcessLifecycleOwnerInitializer"
-102-->[androidx.lifecycle:lifecycle-process:2.2.0] C:\Users\shado\.gradle\caches\transforms-2\files-2.1\f8e2b213c9c6535c422622afbf842b10\jetified-lifecycle-process-2.2.0\AndroidManifest.xml:26:13-79
+102-->[androidx.lifecycle:lifecycle-process:2.2.0] C:\Users\albos\.gradle\caches\transforms-2\files-2.1\f8e2b213c9c6535c422622afbf842b10\jetified-lifecycle-process-2.2.0\AndroidManifest.xml:26:13-79
 103            android:authorities="com.example.spoiledapps.lifecycle-process"
-103-->[androidx.lifecycle:lifecycle-process:2.2.0] C:\Users\shado\.gradle\caches\transforms-2\files-2.1\f8e2b213c9c6535c422622afbf842b10\jetified-lifecycle-process-2.2.0\AndroidManifest.xml:27:13-69
+103-->[androidx.lifecycle:lifecycle-process:2.2.0] C:\Users\albos\.gradle\caches\transforms-2\files-2.1\f8e2b213c9c6535c422622afbf842b10\jetified-lifecycle-process-2.2.0\AndroidManifest.xml:27:13-69
 104            android:exported="false"
-104-->[androidx.lifecycle:lifecycle-process:2.2.0] C:\Users\shado\.gradle\caches\transforms-2\files-2.1\f8e2b213c9c6535c422622afbf842b10\jetified-lifecycle-process-2.2.0\AndroidManifest.xml:28:13-37
+104-->[androidx.lifecycle:lifecycle-process:2.2.0] C:\Users\albos\.gradle\caches\transforms-2\files-2.1\f8e2b213c9c6535c422622afbf842b10\jetified-lifecycle-process-2.2.0\AndroidManifest.xml:28:13-37
 105            android:multiprocess="true" />
-105-->[androidx.lifecycle:lifecycle-process:2.2.0] C:\Users\shado\.gradle\caches\transforms-2\files-2.1\f8e2b213c9c6535c422622afbf842b10\jetified-lifecycle-process-2.2.0\AndroidManifest.xml:29:13-40
+105-->[androidx.lifecycle:lifecycle-process:2.2.0] C:\Users\albos\.gradle\caches\transforms-2\files-2.1\f8e2b213c9c6535c422622afbf842b10\jetified-lifecycle-process-2.2.0\AndroidManifest.xml:29:13-40
 106    </application>
 107
 108</manifest>

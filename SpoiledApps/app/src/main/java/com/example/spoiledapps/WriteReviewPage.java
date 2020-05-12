@@ -95,14 +95,6 @@ public class WriteReviewPage extends AppCompatActivity {
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        FloatingActionButton fab = findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
-            }
-        });
 
         submitReviewButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -140,6 +132,7 @@ public class WriteReviewPage extends AppCompatActivity {
                 reviewSubmission.put(KEY_leastFavFeature, leastFavFeat);
                 reviewSubmission.put(KEY_freeformSection, freeform);
                 reviewSubmission.put(KEY_authorID, userID);
+                reviewSubmission.put("App ID", appID);
                 reviewSubmission.put(KEY_authorReputationScore, useableRepScore);
 
                 db.collection("Reviews").document().set(reviewSubmission);

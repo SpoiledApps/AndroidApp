@@ -12,6 +12,7 @@ import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.RequiresApi;
@@ -36,6 +37,7 @@ public class AppDetailActivity extends AppCompatActivity {
     private ArrayList<Review> reviewsList;
     private TextView appTitleLabel;
     private TextView companyLabel;
+    private TextView spoiledScoreLabel;
     private Button writeReviewButton;
     private String documentID;
     private int topMargin;
@@ -47,8 +49,7 @@ public class AppDetailActivity extends AppCompatActivity {
 
 
 
-        //documentID = getIntent().getStringExtra("documentID");
-        documentID = "thisshouldshowupontheapp";
+        documentID = getIntent().getStringExtra("documentID");
         System.out.println("Swapped Intent ID: " + documentID);
 
         reviewsList = new ArrayList<Review>();
@@ -58,6 +59,7 @@ public class AppDetailActivity extends AppCompatActivity {
 
         appTitleLabel = findViewById(R.id.AppTitle);
         companyLabel = findViewById(R.id.CompanyName);
+        spoiledScoreLabel = findViewById(R.id.spoiledScore);
 
         System.out.println("Init");
         System.out.println(appTitleLabel == null);
@@ -84,6 +86,7 @@ public class AppDetailActivity extends AppCompatActivity {
                     @Override
                     public void onComplete(@NonNull Task<QuerySnapshot> task) {
                         if (task.isSuccessful()) {
+                            float reviewTotal = 0.0f;
                             for (QueryDocumentSnapshot documentSnapshot : task.getResult()) {
                                 String headline = documentSnapshot.get("Review Headline").toString();
                                 String reviewText = documentSnapshot.get("Freeform Section").toString();
@@ -92,13 +95,19 @@ public class AppDetailActivity extends AppCompatActivity {
                                 String cons = documentSnapshot.get("Cons").toString();
                                 String favorite = documentSnapshot.get("Favorite Feature").toString();
                                 String leastFavorite = documentSnapshot.get("Least Favorite Feature").toString();
+                                int authorReview = (int) Float.parseFloat(documentSnapshot.get("Author Reputation Score at Time of Review").toString());
                                 float rating = Float.parseFloat(documentSnapshot.get("Rating").toString());
 
-                                Review review = new Review(authorid, headline, reviewText, pros, cons, favorite, leastFavorite, rating);
+                                reviewTotal += rating;
 
-                                System.out.println(review);
+                                Review review = new Review(authorid, headline, reviewText, pros, cons, favorite, leastFavorite, rating, authorReview);
+
 
                                 reviewsList.add(review);
+                            }
+                            if(reviewsList.size() != 0) {
+                                float score = reviewTotal / reviewsList.size();
+                                spoiledScoreLabel.setText("Spoiled Score: " + (int) (score * 100));
                             }
 
                             placeReviews(0);
@@ -122,7 +131,7 @@ public class AppDetailActivity extends AppCompatActivity {
         }
         final Review review = reviewsList.get(i);
         final RelativeLayout appLayout = new RelativeLayout(this.getBaseContext());
-        RelativeLayout.LayoutParams linearParams = new RelativeLayout.LayoutParams(WindowManager.LayoutParams.MATCH_PARENT,1000);
+        RelativeLayout.LayoutParams linearParams = new RelativeLayout.LayoutParams(WindowManager.LayoutParams.MATCH_PARENT,600);
         appLayout.setLayoutParams(linearParams);
         scrollView.addView(appLayout);
         topMargin = 5;
@@ -175,6 +184,7 @@ public class AppDetailActivity extends AppCompatActivity {
                                                             @Override
                                                             public void onClick(View view) {
                                                                 VoteAction(true, review.getAuthorID());
+                                                                Toast.makeText(AppDetailActivity.this, "Upvote Recorded!", Toast.LENGTH_LONG).show();
                                                             }
                                                         });
 
@@ -182,12 +192,15 @@ public class AppDetailActivity extends AppCompatActivity {
                                                             @Override
                                                             public void onClick(View view) {
                                                                 VoteAction(false, review.getAuthorID());
+                                                                Toast.makeText(AppDetailActivity.this, "Downvote Recorded!", Toast.LENGTH_LONG).show();
                                                             }
                                                         });
+                                                        appLayout.addView(getTextView("Author Rep: " + review.getAuthorScore(), 500, 60, 700, topMargin + 20, Color.BLACK, 15));
                                                         topMargin += 105;
                                                         appLayout.addView(createLine(WindowManager.LayoutParams.MATCH_PARENT, 5, 0, topMargin,  Color.RED));
-
+                                                        appLayout.setMinimumHeight(topMargin + 5);
                                                         placeReviews(i + 1);
+
 
                                                     }
                                                 });
@@ -206,9 +219,7 @@ public class AppDetailActivity extends AppCompatActivity {
                 });
             }
         });
-        appLayout.setMinimumHeight(topMargin + 5);
 
-        System.out.println("Hello");
 
         /*appLayout.setOnClickListener(new View.OnClickListener() {
             @Override
