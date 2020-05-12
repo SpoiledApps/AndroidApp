@@ -140,6 +140,7 @@ public class WriteReviewPage extends AppCompatActivity {
                 reviewSubmission.put(KEY_leastFavFeature, leastFavFeat);
                 reviewSubmission.put(KEY_freeformSection, freeform);
                 reviewSubmission.put(KEY_authorID, userID);
+                reviewSubmission.put("App ID", appID);
                 reviewSubmission.put(KEY_authorReputationScore, useableRepScore);
 
                 db.collection("Reviews").document().set(reviewSubmission);

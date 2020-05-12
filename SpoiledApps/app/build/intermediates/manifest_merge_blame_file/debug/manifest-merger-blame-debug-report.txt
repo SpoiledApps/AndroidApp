@@ -49,27 +49,27 @@
 31-->C:\Users\shado\Documents\School\NYIT\Spring 2020\CSCI 318 - Programming Language Concepts\AndroidApp-Master\AndroidApp\SpoiledApps\app\src\main\AndroidManifest.xml:15:13-56
 32        </activity>
 33        <activity
-33-->C:\Users\shado\Documents\School\NYIT\Spring 2020\CSCI 318 - Programming Language Concepts\AndroidApp-Master\AndroidApp\SpoiledApps\app\src\main\AndroidManifest.xml:18:9-27:20
+33-->C:\Users\shado\Documents\School\NYIT\Spring 2020\CSCI 318 - Programming Language Concepts\AndroidApp-Master\AndroidApp\SpoiledApps\app\src\main\AndroidManifest.xml:18:9-23:20
 34            android:name="com.example.spoiledapps.AppDetailActivity"
 34-->C:\Users\shado\Documents\School\NYIT\Spring 2020\CSCI 318 - Programming Language Concepts\AndroidApp-Master\AndroidApp\SpoiledApps\app\src\main\AndroidManifest.xml:19:13-46
 35            android:label="@string/title_activity_app_list"
 35-->C:\Users\shado\Documents\School\NYIT\Spring 2020\CSCI 318 - Programming Language Concepts\AndroidApp-Master\AndroidApp\SpoiledApps\app\src\main\AndroidManifest.xml:20:13-60
 36            android:theme="@style/AppTheme.NoActionBar" >
 36-->C:\Users\shado\Documents\School\NYIT\Spring 2020\CSCI 318 - Programming Language Concepts\AndroidApp-Master\AndroidApp\SpoiledApps\app\src\main\AndroidManifest.xml:21:13-56
-37            <intent-filter>
-37-->C:\Users\shado\Documents\School\NYIT\Spring 2020\CSCI 318 - Programming Language Concepts\AndroidApp-Master\AndroidApp\SpoiledApps\app\src\main\AndroidManifest.xml:22:13-26:29
-38                <action android:name="android.intent.action.MAIN" />
-38-->C:\Users\shado\Documents\School\NYIT\Spring 2020\CSCI 318 - Programming Language Concepts\AndroidApp-Master\AndroidApp\SpoiledApps\app\src\main\AndroidManifest.xml:23:17-69
-38-->C:\Users\shado\Documents\School\NYIT\Spring 2020\CSCI 318 - Programming Language Concepts\AndroidApp-Master\AndroidApp\SpoiledApps\app\src\main\AndroidManifest.xml:23:25-66
-39
-40                <category android:name="android.intent.category.LAUNCHER" />
-40-->C:\Users\shado\Documents\School\NYIT\Spring 2020\CSCI 318 - Programming Language Concepts\AndroidApp-Master\AndroidApp\SpoiledApps\app\src\main\AndroidManifest.xml:25:17-77
-40-->C:\Users\shado\Documents\School\NYIT\Spring 2020\CSCI 318 - Programming Language Concepts\AndroidApp-Master\AndroidApp\SpoiledApps\app\src\main\AndroidManifest.xml:25:27-74
-41            </intent-filter>
-42        </activity>
-43        <activity android:name="com.example.spoiledapps.LoginActivity" >
-43-->C:\Users\shado\Documents\School\NYIT\Spring 2020\CSCI 318 - Programming Language Concepts\AndroidApp-Master\AndroidApp\SpoiledApps\app\src\main\AndroidManifest.xml:28:9-30:20
-43-->C:\Users\shado\Documents\School\NYIT\Spring 2020\CSCI 318 - Programming Language Concepts\AndroidApp-Master\AndroidApp\SpoiledApps\app\src\main\AndroidManifest.xml:28:19-48
+37        </activity>
+38        <activity android:name="com.example.spoiledapps.LoginActivity" >
+38-->C:\Users\shado\Documents\School\NYIT\Spring 2020\CSCI 318 - Programming Language Concepts\AndroidApp-Master\AndroidApp\SpoiledApps\app\src\main\AndroidManifest.xml:24:9-30:20
+38-->C:\Users\shado\Documents\School\NYIT\Spring 2020\CSCI 318 - Programming Language Concepts\AndroidApp-Master\AndroidApp\SpoiledApps\app\src\main\AndroidManifest.xml:24:19-48
+39            <intent-filter>
+39-->C:\Users\shado\Documents\School\NYIT\Spring 2020\CSCI 318 - Programming Language Concepts\AndroidApp-Master\AndroidApp\SpoiledApps\app\src\main\AndroidManifest.xml:25:13-29:29
+40                <action android:name="android.intent.action.MAIN" />
+40-->C:\Users\shado\Documents\School\NYIT\Spring 2020\CSCI 318 - Programming Language Concepts\AndroidApp-Master\AndroidApp\SpoiledApps\app\src\main\AndroidManifest.xml:26:17-69
+40-->C:\Users\shado\Documents\School\NYIT\Spring 2020\CSCI 318 - Programming Language Concepts\AndroidApp-Master\AndroidApp\SpoiledApps\app\src\main\AndroidManifest.xml:26:25-66
+41
+42                <category android:name="android.intent.category.LAUNCHER" />
+42-->C:\Users\shado\Documents\School\NYIT\Spring 2020\CSCI 318 - Programming Language Concepts\AndroidApp-Master\AndroidApp\SpoiledApps\app\src\main\AndroidManifest.xml:28:17-77
+42-->C:\Users\shado\Documents\School\NYIT\Spring 2020\CSCI 318 - Programming Language Concepts\AndroidApp-Master\AndroidApp\SpoiledApps\app\src\main\AndroidManifest.xml:28:27-74
+43            </intent-filter>
 44        </activity>
 45        <activity android:name="com.example.spoiledapps.verificationPage" />
 45-->C:\Users\shado\Documents\School\NYIT\Spring 2020\CSCI 318 - Programming Language Concepts\AndroidApp-Master\AndroidApp\SpoiledApps\app\src\main\AndroidManifest.xml:31:9-54
