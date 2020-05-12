@@ -26,7 +26,7 @@
     <string name="sign_in">Sign in!</string>
     <string name="not_a_user_register_now">Not a user? Register now!</string>
     <string name="spoiledapps">SpoiledApps</string>
-
+    <string name="Writereview">Write Review!</string>
     <string name="title_activity_add_app_page">AddAppPage</string>
     <string name="AddAppTitle">Add a New App to SpoiledApps!</string>
     <string name="CopyPasteInstruction">Copy Paste Play Store Link Here!</string>

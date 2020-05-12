@@ -33,7 +33,7 @@ public class AppListActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_app_list);
 
-        scrollView = findViewById(R.id.applistscroll);
+        scrollView = findViewById(R.id.applistscrolllayout);
         appsList = new ArrayList<App>();
 
         auth = FirebaseAuth.getInstance();
@@ -41,14 +41,14 @@ public class AppListActivity extends AppCompatActivity {
 
         database.collection("Apps")
                 .get()
-               .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
+                .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
                     @Override
                     public void onComplete(@NonNull Task<QuerySnapshot> task) {
                         if (task.isSuccessful()) {
                             for (QueryDocumentSnapshot document : task.getResult()) {
                                 Map<String, Object> apps = document.getData();
                                 String appTitle = null;
-                                 String companyName = null;
+                                String companyName = null;
                                 String documentTag = document.getId();
                                 for (Map.Entry<String,Object> entry : apps.entrySet()) {
                                     if(entry.getKey().toString().equalsIgnoreCase("App_Title")) {

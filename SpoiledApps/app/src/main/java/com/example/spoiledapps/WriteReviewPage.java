@@ -73,6 +73,8 @@ public class WriteReviewPage extends AppCompatActivity {
 
         db = FirebaseFirestore.getInstance();
 
+        appID = getIntent().getStringExtra("documentID");
+
         editTextHeadline = findViewById(R.id.ReviewHeadline);
         editTextRating = findViewById(R.id.RatingAsDecimal);
         editTextPros = findViewById(R.id.ProsFillable);

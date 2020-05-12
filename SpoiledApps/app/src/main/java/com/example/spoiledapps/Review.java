@@ -7,13 +7,15 @@ public class Review {
     private String cons;
     private String favoriteFeature;
     private String leastFavoriteFeature;
+    private String authorID;
     private float rating;
 
-    public Review(String headline, String generalReview, String pros, String cons, String favoriteFeature, String leastFavoriteFeature, float rating) {
+    public Review(String author, String headline, String generalReview, String pros, String cons, String favoriteFeature, String leastFavoriteFeature, float rating) {
         this.headline = headline;
         this.generalReview = generalReview;
         this.pros = pros;
         this.cons = cons;
+        this.authorID = author;
         this.favoriteFeature = favoriteFeature;
         this.leastFavoriteFeature = leastFavoriteFeature;
         this.rating = rating;
@@ -45,6 +47,10 @@ public class Review {
 
     public String getLeastFavoriteFeature() {
         return leastFavoriteFeature;
+    }
+
+    public String getAuthorID() {
+        return authorID;
     }
 
     public float getRating() {
