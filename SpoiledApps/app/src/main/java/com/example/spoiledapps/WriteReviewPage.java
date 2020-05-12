@@ -108,38 +108,6 @@ public class WriteReviewPage extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                //Updates number of reviews user writes
-                CollectionReference usersRef = db.collection("Users");
-                Task<QuerySnapshot> idQuery = usersRef.whereEqualTo("True User ID", userID).get().addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
-                    @Override
-                    public void onComplete(@NonNull Task<QuerySnapshot> task) {
-                        if(task.isSuccessful())
-                        {
-                            for (QueryDocumentSnapshot document: task.getResult())
-                            {
-                                //Map targetDocument = document.getData();
-                                //usersDocID = targetDocument.toString();
-                                usersDocID = document.getData().toString();
-                            }
-                        }
-                    }
-                });
-
-                final double[] authorRepScore = new double[1];
-                DocumentReference authorRepScoreRef = db.collection("Users").document(usersDocID);
-                authorRepScoreRef.get()
-                        .addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
-                            @Override
-                            public void onSuccess(DocumentSnapshot documentSnapshot) {
-                                double reputationScore = (double)documentSnapshot.get("Reputation_Score");
-                                authorRepScore[0] = reputationScore;
-                            }
-                        });
-                double useableRepScore = authorRepScore[0];
-
-
-
-
                 String headline = editTextHeadline.getText().toString().trim();
                 String rating = editTextRating.getText().toString().trim();
                 String pros = editTextPros.getText().toString().trim();
@@ -150,6 +118,17 @@ public class WriteReviewPage extends AppCompatActivity {
 
                 //Insert Logic to Fetch AppID here
 
+                final double[] authorRepScore = new double[1];
+                final DocumentReference authorRepScoreRef = db.collection("Users").document(userID);
+                authorRepScoreRef.get()
+                        .addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
+                            @Override
+                            public void onSuccess(DocumentSnapshot documentSnapshot) {
+                                double reputationScore = (double)documentSnapshot.get("Reputation_Score");
+                                authorRepScore[0] = reputationScore;
+                            }
+                        });
+                double useableRepScore = authorRepScore[0];
 
                 Map<String, Object> reviewSubmission = new HashMap<>();
                 //reviewSubmission.put(KEY_appID, insertFetchedAppID);
@@ -169,9 +148,6 @@ public class WriteReviewPage extends AppCompatActivity {
                 startActivity(new Intent(getApplicationContext(),HomePageActivity.class));
 
 
-
-
-
                 //THIS CODE BELOW UPDATES THE NUMBER OF REVIEWS A USER HAS!
                 //db.collection("Users").document(//insert users' document ID)
                 final DocumentReference numReviewsReference = db.collection("Users").document(userID);
@@ -185,7 +161,8 @@ public class WriteReviewPage extends AppCompatActivity {
 
                             }
                         });
-                final DocumentReference appsReviewedRef = db.collection("Users").document(usersDocID);
+
+                final DocumentReference appsReviewedRef = db.collection("Users").document(userID);
                 appsReviewedRef.get()
                         .addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
                     @Override
@@ -194,25 +171,6 @@ public class WriteReviewPage extends AppCompatActivity {
 
                     }
                 });
-
-
-
-              /* db.collection("Users").document(userID).get()
-                        .addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
-                            @Override
-                            public void onSuccess(DocumentSnapshot documentSnapshot) {
-                                if(documentSnapshot.exists())
-                                {
-                                    Map<String, Object> user = documentSnapshot.getData();
-                                }
-                                else
-                                {
-                                    Toast.makeText(WriteReviewPage.this, "Document Doesn't Exist", Toast.LENGTH_SHORT).show();
-                                }
-                            }
-                        });
-                db.collection("Users").document(userID).update({RegistrationActivity.KEY_numReviews  RegistrationActivity.numReviews++});
-                */
 
             }
 
