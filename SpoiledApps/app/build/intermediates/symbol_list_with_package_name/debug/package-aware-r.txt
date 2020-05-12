@@ -1754,6 +1754,7 @@ id snap
 id snapMargins
 id spacer
 id split_action_bar
+id spoiledScore
 id spread
 id spread_inside
 id src_atop

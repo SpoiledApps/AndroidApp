@@ -37,6 +37,7 @@ public class AppDetailActivity extends AppCompatActivity {
     private ArrayList<Review> reviewsList;
     private TextView appTitleLabel;
     private TextView companyLabel;
+    private TextView spoiledScoreLabel;
     private Button writeReviewButton;
     private String documentID;
     private int topMargin;
@@ -58,6 +59,7 @@ public class AppDetailActivity extends AppCompatActivity {
 
         appTitleLabel = findViewById(R.id.AppTitle);
         companyLabel = findViewById(R.id.CompanyName);
+        spoiledScoreLabel = findViewById(R.id.spoiledScore);
 
         System.out.println("Init");
         System.out.println(appTitleLabel == null);
@@ -84,6 +86,7 @@ public class AppDetailActivity extends AppCompatActivity {
                     @Override
                     public void onComplete(@NonNull Task<QuerySnapshot> task) {
                         if (task.isSuccessful()) {
+                            float reviewTotal = 0.0f;
                             for (QueryDocumentSnapshot documentSnapshot : task.getResult()) {
                                 String headline = documentSnapshot.get("Review Headline").toString();
                                 String reviewText = documentSnapshot.get("Freeform Section").toString();
@@ -95,13 +98,16 @@ public class AppDetailActivity extends AppCompatActivity {
                                 int authorReview = (int) Float.parseFloat(documentSnapshot.get("Author Reputation Score at Time of Review").toString());
                                 float rating = Float.parseFloat(documentSnapshot.get("Rating").toString());
 
-
+                                reviewTotal += rating;
 
                                 Review review = new Review(authorid, headline, reviewText, pros, cons, favorite, leastFavorite, rating, authorReview);
 
-                                System.out.println(review);
 
                                 reviewsList.add(review);
+                            }
+                            if(reviewsList.size() != 0) {
+                                float score = reviewTotal / reviewsList.size();
+                                spoiledScoreLabel.setText("Spoiled Score: " + (int) (score * 100));
                             }
 
                             placeReviews(0);
