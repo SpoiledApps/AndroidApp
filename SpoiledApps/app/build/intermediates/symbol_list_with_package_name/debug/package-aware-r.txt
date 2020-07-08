@@ -950,6 +950,7 @@ color primary_text_disabled_material_dark
 color primary_text_disabled_material_light
 color ripple_material_dark
 color ripple_material_light
+color s_picon_background
 color secondary_text_default_material_dark
 color secondary_text_default_material_light
 color secondary_text_disabled_material_dark
@@ -1381,6 +1382,9 @@ drawable abc_textfield_search_material
 drawable abc_vector_test
 drawable avd_hide_password
 drawable avd_show_password
+drawable back2
+drawable back3
+drawable backdrop
 drawable btn_checkbox_checked_mtrl
 drawable btn_checkbox_checked_to_unchecked_mtrl_animation
 drawable btn_checkbox_unchecked_mtrl
@@ -1389,6 +1393,8 @@ drawable btn_radio_off_mtrl
 drawable btn_radio_off_to_on_mtrl_animation
 drawable btn_radio_on_mtrl
 drawable btn_radio_on_to_off_mtrl_animation
+drawable color1
+drawable color2
 drawable common_full_open_on_phone
 drawable common_google_signin_btn_icon_dark
 drawable common_google_signin_btn_icon_dark_focused
@@ -1429,6 +1435,22 @@ drawable ic_mtrl_checked_circle
 drawable ic_mtrl_chip_checked_black
 drawable ic_mtrl_chip_checked_circle
 drawable ic_mtrl_chip_close_circle
+drawable icon10
+drawable icon11
+drawable icon12
+drawable icon13
+drawable icon14
+drawable icon15
+drawable icon17
+drawable icon18
+drawable icon2
+drawable icon3
+drawable icon4
+drawable icon5
+drawable icon6
+drawable icon7
+drawable icon8
+drawable icon9
 drawable mtrl_dialog_background
 drawable mtrl_dropdown_arrow
 drawable mtrl_ic_arrow_drop_down
@@ -1456,6 +1478,7 @@ drawable tooltip_frame_dark
 drawable tooltip_frame_light
 font aclonica
 font aldrich
+font biryani_bold
 id ALT
 id AddAppPageTitle
 id AddNewAppButton
@@ -1632,6 +1655,7 @@ id icon_group
 id icon_only
 id ifRoom
 id image
+id imageView3
 id info
 id invisible
 id italic
@@ -1792,6 +1816,7 @@ id title
 id titleDividerNoCustom
 id title_template
 id toolbar
+id toolbar2
 id top
 id topPanel
 id touch_outside
@@ -1956,6 +1981,9 @@ layout text_view_with_theme_line_height
 layout text_view_without_line_height
 mipmap ic_launcher
 mipmap ic_launcher_round
+mipmap s_picon
+mipmap s_picon_foreground
+mipmap s_picon_round
 plurals mtrl_badge_content_description
 string AddAppTitle
 string Cons
@@ -2039,6 +2067,7 @@ string fab_transformation_sheet_behavior
 string firebase_database_url
 string first_fragment_label
 string first_name
+string forgot_password
 string gcm_defaultSenderId
 string go_back_to_login_page
 string google_api_key

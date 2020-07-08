@@ -175,11 +175,11 @@ ADDED from C:\Users\albos\Documents\GitHub\AndroidApp\SpoiledApps\app\src\main\A
 	android:name
 		ADDED from C:\Users\albos\Documents\GitHub\AndroidApp\SpoiledApps\app\src\main\AndroidManifest.xml:42:13-45
 meta-data#preloaded_fonts
-ADDED from C:\Users\albos\Documents\GitHub\AndroidApp\SpoiledApps\app\src\main\AndroidManifest.xml:45:9-47:57
+ADDED from C:\Users\albos\Documents\GitHub\AndroidApp\SpoiledApps\app\src\main\AndroidManifest.xml:45:9-47:60
 	android:resource
-		ADDED from C:\Users\albos\Documents\GitHub\AndroidApp\SpoiledApps\app\src\main\AndroidManifest.xml:47:13-54
+		ADDED from C:\Users\albos\Documents\GitHub\AndroidApp\SpoiledApps\app\src\main\AndroidManifest.xml:47:17-58
 	android:name
-		ADDED from C:\Users\albos\Documents\GitHub\AndroidApp\SpoiledApps\app\src\main\AndroidManifest.xml:46:13-43
+		ADDED from C:\Users\albos\Documents\GitHub\AndroidApp\SpoiledApps\app\src\main\AndroidManifest.xml:46:17-47
 uses-permission#android.permission.INTERNET
 ADDED from C:\Users\albos\Documents\GitHub\AndroidApp\SpoiledApps\app\src\main\AndroidManifest.xml:50:5-67
 MERGED from [com.google.firebase:firebase-database:19.3.0] C:\Users\albos\.gradle\caches\transforms-2\files-2.1\a858482f0d85511048b88d680e761880\jetified-firebase-database-19.3.0\AndroidManifest.xml:26:5-67
